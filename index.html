@@ -1584,7 +1584,7 @@
             <article class="pet-card reveal">
               <div class="pet-image">
                 <img
-                  src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=85"
+                  src="am.jpg"
                   alt="Volunteer feedback from Aarav Mehta"
                 />
                 <span class="pet-badge" data-i18n="pet1.badge">
@@ -1615,7 +1615,7 @@
             <article class="pet-card reveal">
               <div class="pet-image">
                 <img
-                  src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=85"
+                  src="ms.jpg"
                   alt="Supporter feedback from Meera Sharma"
                 />
                 <span class="pet-badge" data-i18n="pet2.badge">
@@ -1645,10 +1645,7 @@
 
             <article class="pet-card reveal">
               <div class="pet-image">
-                <img
-                  src="ys.jpg"
-                  alt="Yashwant Thakur feedback"
-                />
+                <img src="ys.jpg" alt="Yashwant Thakur feedback" />
                 <span class="pet-badge" data-i18n="pet3.badge">
                   Yashwant Thakur's feedback
                 </span>
@@ -1664,8 +1661,7 @@
 
                 <p data-i18n="pet3.text">
                   “A dedicated NGO providing abandoned animals with food,
-                  shelter, medical care, and a safe second chance at life.
-                  🐾❤️”
+                  shelter, medical care, and a safe second chance at life. 🐾❤️”
                 </p>
 
                 <div class="pet-features">
@@ -1748,13 +1744,11 @@
         <div class="container donate-grid">
           <div class="donate-copy reveal">
             <div class="eyebrow" data-i18n="donate.eyebrow">
-              this video is for my dog sultan die recently and this video is for
-              him show how much i love him and how much i miss him
+             video in the memory of my dog  
             </div>
 
             <h2 data-i18n="donate.title">
-              Give every rescued animal the love, safety, and second chance they
-              truly deserve. 🐾
+              tribute to my little boy caretaker brother friend and companion 🐾
             </h2>
 
             <p data-i18n="donate.text">
@@ -1849,432 +1843,432 @@
     <div class="toast" id="toast"></div>
 
     <script>
-      const header = document.getElementById("header");
-      const navLinks = document.getElementById("navLinks");
-      const menuToggle = document.getElementById("menuToggle");
-      const themeToggle = document.getElementById("themeToggle");
-      const languageToggle = document.getElementById("languageToggle");
+            const header = document.getElementById("header");
+            const navLinks = document.getElementById("navLinks");
+            const menuToggle = document.getElementById("menuToggle");
+            const themeToggle = document.getElementById("themeToggle");
+            const languageToggle = document.getElementById("languageToggle");
 
-      window.addEventListener("scroll", () => {
-        header.classList.toggle("scrolled", window.scrollY > 20);
-        setActiveLink();
-      });
-
-      menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("open");
-
-        document.body.classList.toggle("menu-open", isOpen);
-        menuToggle.textContent = isOpen ? "×" : "☰";
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute(
-          "aria-label",
-          isOpen ? "Close menu" : "Open menu",
-        );
-      });
-
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("open");
-          document.body.classList.remove("menu-open");
-          menuToggle.textContent = "☰";
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open menu");
-        });
-      });
-
-      const sections = document.querySelectorAll("main section[id]");
-      const navItems = document.querySelectorAll(".nav-links a");
-
-      function setActiveLink() {
-        let current = "home";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 150;
-
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navItems.forEach((link) => {
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === `#${current}`,
-          );
-        });
-      }
-
-      const revealElements = document.querySelectorAll(".reveal");
-
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.12,
-        },
-      );
-
-      revealElements.forEach((element) => revealObserver.observe(element));
-
-      const counters = document.querySelectorAll("[data-count]");
-      const statsSection = document.querySelector(".stats-grid");
-      let statsAnimated = false;
-
-      const statsObserver = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting && !statsAnimated) {
-            statsAnimated = true;
-
-            counters.forEach((counter) => {
-              const target = Number(counter.dataset.count);
-              const duration = 1800;
-              const start = performance.now();
-
-              function updateCounter(now) {
-                const progress = Math.min((now - start) / duration, 1);
-                const value = Math.floor(progress * target);
-
-                counter.textContent = value.toLocaleString();
-
-                if (progress < 1) {
-                  requestAnimationFrame(updateCounter);
-                }
-              }
-
-              requestAnimationFrame(updateCounter);
+            window.addEventListener("scroll", () => {
+              header.classList.toggle("scrolled", window.scrollY > 20);
+              setActiveLink();
             });
-          }
-        },
-        {
-          threshold: 0.5,
-        },
-      );
 
-      if (statsSection) {
-        statsObserver.observe(statsSection);
-      }
+            menuToggle.addEventListener("click", () => {
+              const isOpen = navLinks.classList.toggle("open");
 
-      const testimonials = document.querySelectorAll(".testimonial");
-      const dots = document.querySelectorAll(".slider-dot");
-      let currentSlide = 0;
+              document.body.classList.toggle("menu-open", isOpen);
+              menuToggle.textContent = isOpen ? "×" : "☰";
+              menuToggle.setAttribute("aria-expanded", String(isOpen));
+              menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close menu" : "Open menu",
+              );
+            });
 
-      function showSlide(index) {
-        testimonials.forEach((item, itemIndex) => {
-          item.classList.toggle("active", itemIndex === index);
-        });
+            navLinks.querySelectorAll("a").forEach((link) => {
+              link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                document.body.classList.remove("menu-open");
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open menu");
+              });
+            });
 
-        dots.forEach((dot, dotIndex) => {
-          dot.classList.toggle("active", dotIndex === index);
-        });
-      }
+            const sections = document.querySelectorAll("main section[id]");
+            const navItems = document.querySelectorAll(".nav-links a");
 
-      dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          currentSlide = Number(dot.dataset.slide);
-          showSlide(currentSlide);
-        });
-      });
+            function setActiveLink() {
+              let current = "home";
 
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % testimonials.length;
-        showSlide(currentSlide);
-      }, 5000);
+              sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 150;
 
-      function updateThemeButton(isDark) {
-        themeToggle.textContent = isDark ? "☀️" : "🌙";
-        themeToggle.setAttribute(
-          "aria-label",
-          isDark ? "Switch to light mode" : "Switch to dark mode",
-        );
-        themeToggle.setAttribute("aria-pressed", String(isDark));
-      }
+                if (window.scrollY >= sectionTop) {
+                  current = section.getAttribute("id");
+                }
+              });
 
-      const savedTheme = localStorage.getItem("paw-purpose-theme") || "light";
-      const isDarkInitially = savedTheme === "dark";
+              navItems.forEach((link) => {
+                link.classList.toggle(
+                  "active",
+                  link.getAttribute("href") === `#${current}`,
+                );
+              });
+            }
 
-      document.documentElement.setAttribute(
-        "data-theme",
-        isDarkInitially ? "dark" : "light",
-      );
+            const revealElements = document.querySelectorAll(".reveal");
 
-      updateThemeButton(isDarkInitially);
+            const revealObserver = new IntersectionObserver(
+              (entries, observer) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              {
+                threshold: 0.12,
+              },
+            );
 
-      themeToggle.addEventListener("click", () => {
-        const isDark =
-          document.documentElement.getAttribute("data-theme") === "dark";
+            revealElements.forEach((element) => revealObserver.observe(element));
 
-        const nextTheme = isDark ? "light" : "dark";
+            const counters = document.querySelectorAll("[data-count]");
+            const statsSection = document.querySelector(".stats-grid");
+            let statsAnimated = false;
 
-        document.documentElement.setAttribute("data-theme", nextTheme);
-        localStorage.setItem("paw-purpose-theme", nextTheme);
-        updateThemeButton(nextTheme === "dark");
-      });
+            const statsObserver = new IntersectionObserver(
+              (entries) => {
+                if (entries[0].isIntersecting && !statsAnimated) {
+                  statsAnimated = true;
 
-      const translations = {
-        en: {
-          "topbar.tagline": "Compassion in action for every rescued life.",
-          "nav.home": "Home",
-          "nav.about": "About",
-          "nav.programs": "Programs",
-          "nav.adopt": "Adopt",
-          "nav.contact": "Contact",
+                  counters.forEach((counter) => {
+                    const target = Number(counter.dataset.count);
+                    const duration = 1800;
+                    const start = performance.now();
 
-          "hero.eyebrow": "Rescuing hearts, one paw at a time",
-          "hero.titleLine1": "Helping animals",
-          "hero.titleLine2": "find home, healing & hope.",
-          "hero.text":
-            "We rescue abandoned, injured and neglected animals, provide medical care and help them find loving forever families. Together, we create a kinder world for every living being.",
-          "hero.primaryBtn": "Explore our work",
-          "hero.savedLabel": "animals saved",
+                    function updateCounter(now) {
+                      const progress = Math.min((now - start) / duration, 1);
+                      const value = Math.floor(progress * target);
 
-          "stats.saved": "Rescued lives",
-          "stats.volunteers": "Volunteer partners",
-          "stats.shelters": "Rescue shelters",
-          "stats.years": "Years of care",
+                      counter.textContent = value.toLocaleString();
 
-          "about.eyebrow": "Who we are",
-          "about.title": "Compassion meets action.",
-          "about.text1":
-            "Paw & Purpose is a community-led animal welfare organization working to prevent cruelty, rescue vulnerable animals and build awareness around responsible pet care.",
-          "about.text2":
-            "From emergency medical aid to adoption support and humane education, we work with local partners to ensure every rescued animal receives the dignity, care and love they deserve.",
-          "about.feature1": "Emergency rescue & rehabilitation",
-          "about.feature2": "Spay/neuter awareness and support",
-          "about.feature3": "Responsible adoption matching",
-          "about.button": "See how we help",
+                      if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                      }
+                    }
 
-          "programs.eyebrow": "Our work",
-          "programs.title": "Every rescue starts with kindness.",
-          "programs.text":
-            "We provide immediate care and long-term support to animals who have been neglected, injured or abandoned.",
-          "program1.title": "Rescue & Recovery",
-          "program1.text":
-            "We rescue vulnerable animals from danger and provide medical treatment, food and safe shelter.",
-          "program1.link": "Learn more →",
-          "program2.title": "Adoption & Rehoming",
-          "program2.text":
-            "Matching rescued animals with loving families through our thoughtful adoption process.",
-          "program2.link": "Learn more →",
-          "program3.title": "Community Care",
-          "program3.text":
-            "We run vaccination drives, sterilization programs and education for humane pet ownership.",
-          "program3.link": "Learn more →",
+                    requestAnimationFrame(updateCounter);
+                  });
+                }
+              },
+              {
+                threshold: 0.5,
+              },
+            );
 
-          "story.eyebrow": "Our story",
-          "story.title": "Saving lives, changing futures.",
-          "story.text":
-            "What started as a small volunteer effort has grown into a rescue network that provides emergency support, long-term shelter, and a second chance for animals in need.",
-          "story.quote":
-            "“The world is a better place when every animal is safe, cared for and loved.”",
-          "story.button": "Join our mission",
+            if (statsSection) {
+              statsObserver.observe(statsSection);
+            }
 
-          "adopt.eyebrow": "Feedback from our community",
-          "adopt.title":
-            "People love the care, compassion and dedication we bring to every rescued life.",
-          "adopt.button": "Share your feedback",
-          "pet1.badge": "Verified review",
-          "pet1.type": "Volunteer",
-          "pet1.age": "2024",
-          "pet1.name": "Aarav Mehta",
-          "pet1.text":
-            "This NGO truly gives rescued animals a second chance with love, care and dignity.",
-          "pet1.feature1": "Compassionate",
-          "pet1.feature2": "Transparent",
+            const testimonials = document.querySelectorAll(".testimonial");
+            const dots = document.querySelectorAll(".slider-dot");
+            let currentSlide = 0;
 
-          "pet2.badge": "Supporter feedback",
-          "pet2.type": "Supporter",
-          "pet2.age": "Positive",
-          "pet2.name": "Meera Sharma",
-          "pet2.text":
-            "The team is deeply committed, humane and consistent in helping animals recover and find safe homes.",
-          "pet2.feature1": "Kind",
-          "pet2.feature2": "Dedicated",
+            function showSlide(index) {
+              testimonials.forEach((item, itemIndex) => {
+                item.classList.toggle("active", itemIndex === index);
+              });
 
-          "pet3.badge": "Yashwant Thakur's feedback",
-          "pet3.type": "Supporter",
-          "pet3.age": "Positive",
-          "pet3.name": "Yashwant Thakur",
-          "pet3.text":
-            "A dedicated NGO providing abandoned animals with food, shelter, medical care, and a safe second chance at life. 🐾❤️",
-          "pet3.feature1": "Supportive",
-          "pet3.feature2": "Helpful",
+              dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle("active", dotIndex === index);
+              });
+            }
 
-          "donate.eyebrow":
-            "this video is for my dog sultan die recently and this video is for him show how much i love him and how much i miss him",
-          "donate.title":
-            "Give every rescued animal the love, safety, and second chance they truly deserve. 🐾",
-          "donate.text":
-            "🐾 Many abandoned animals go through hunger, fear, loneliness, and pain without having a voice to ask for help. The bond between a dog and its owner shown in this video reminds us how deeply animals trust, love, and depend on the people they call family. For a dog, a loving owner is not just a person — they are home, safety, and family. But when that bond is lost, the world can become a frightening place. A little food, clean water, medical care, shelter, or simply a moment of kindness can make a huge difference. They may not be able to ask for help, but we can choose to listen. Every small act of kindness can give an animal hope, comfort, and a chance at a better life.",
+            dots.forEach((dot) => {
+              dot.addEventListener("click", () => {
+                currentSlide = Number(dot.dataset.slide);
+                showSlide(currentSlide);
+              });
+            });
 
-          "footer.tagline":
-            "Rescue, rehabilitate and rehome animals with dignity, safety and love.",
-          "footer.explore": "Explore",
-          "footer.about": "About us",
-          "footer.programs": "Programs",
-          "footer.adopt": "Feedback",
-          "footer.connect": "Connect",
-          "footer.email": "Email us",
-          "footer.call": "Call us",
-          "footer.instagram": "Instagram",
-          "footer.facebook": "Facebook",
-          "footer.made": "Made with compassion for animals.",
-        },
+            setInterval(() => {
+              currentSlide = (currentSlide + 1) % testimonials.length;
+              showSlide(currentSlide);
+            }, 5000);
 
-        hi: {
-          "topbar.tagline": "हर बचाए गए जीवन के लिए करुणा और सेवा।",
-          "nav.home": "होम",
-          "nav.about": "हमारे बारे में",
-          "nav.programs": "कार्यक्रम",
-          "nav.adopt": "गोद लें",
-          "nav.contact": "संपर्क",
+            function updateThemeButton(isDark) {
+              themeToggle.textContent = isDark ? "☀️" : "🌙";
+              themeToggle.setAttribute(
+                "aria-label",
+                isDark ? "Switch to light mode" : "Switch to dark mode",
+              );
+              themeToggle.setAttribute("aria-pressed", String(isDark));
+            }
 
-          "hero.eyebrow": "हर पंजे के साथ एक दिल को बचाना",
-          "hero.titleLine1": "जानवरों की मदद करना",
-          "hero.titleLine2": "उन्हें घर, उपचार और उम्मीद दिलाना।",
-          "hero.text":
-            "हम छोड़े गए, घायल और उपेक्षित जानवरों को बचाते हैं, उन्हें चिकित्सा सहायता देते हैं और प्यार करने वाले परिवारों से मिलाते हैं।",
-          "hero.primaryBtn": "हमारा काम देखें",
-          "hero.savedLabel": "जानवरों को बचाया गया",
+            const savedTheme = localStorage.getItem("paw-purpose-theme") || "light";
+            const isDarkInitially = savedTheme === "dark";
 
-          "stats.saved": "बचाए गए जीवन",
-          "stats.volunteers": "स्वयंसेवी साथी",
-          "stats.shelters": "रेस्क्यू शेल्टर",
-          "stats.years": "सेवा के वर्ष",
+            document.documentElement.setAttribute(
+              "data-theme",
+              isDarkInitially ? "dark" : "light",
+            );
 
-          "about.eyebrow": "हम कौन हैं",
-          "about.title": "करुणा से बदलाव आता है।",
-          "about.text1":
-            "पॉ और पर्पज एक सामुदायिक animal welfare संगठन है जो क्रूरता को रोकने, कमजोर जानवरों को बचाने और जिम्मेदार पालतू देखभाल के प्रति जागरूकता फैलाने के लिए काम करता है।",
-          "about.text2":
-            "आपातकालीन चिकित्सा सहायता से लेकर गोद लेने की सहायता और मानवीय शिक्षा तक, हम स्थानीय भागीदारों के साथ मिलकर काम करते हैं।",
-          "about.feature1": "आपातकालीन बचाव और पुनर्वास",
-          "about.feature2": "नसबंदी जागरूकता और सहायता",
-          "about.feature3": "जिम्मेदार गोद लेने की प्रक्रिया",
-          "about.button": "देखें हम कैसे मदद करते हैं",
+            updateThemeButton(isDarkInitially);
 
-          "programs.eyebrow": "हमारा काम",
-          "programs.title": "हर बचाव की शुरुआत दयालुता से होती है।",
-          "programs.text":
-            "हम उपेक्षित, घायल या छोड़े गए जानवरों की तत्काल मदद और दीर्घकालिक देखभाल करते हैं।",
-          "program1.title": "बचाव और पुनर्वास",
-          "program1.text":
-            "हम कमजोर जानवरों को खतरे से बचाते हैं और उन्हें इलाज, भोजन और सुरक्षित आश्रय देते हैं।",
-          "program1.link": "और जानें →",
-          "program2.title": "गोद लेना और नया घर",
-          "program2.text":
-            "हम बचाए गए जानवरों को प्यार करने वाले परिवारों से जोड़ते हैं।",
-          "program2.link": "और जानें →",
-          "program3.title": "सामुदायिक देखभाल",
-          "program3.text":
-            "हम वैक्सीनेशन ड्राइव, नसबंदी कार्यक्रम और जिम्मेदार पालतू देखभाल की शिक्षा चलाते हैं।",
-          "program3.link": "और जानें →",
+            themeToggle.addEventListener("click", () => {
+              const isDark =
+                document.documentElement.getAttribute("data-theme") === "dark";
 
-          "story.eyebrow": "हमारी कहानी",
-          "story.title": "जीवन बचाना, भविष्य बदलना।",
-          "story.text":
-            "जो शुरुआत में एक छोटा स्वयंसेवी प्रयास था, वह अब जरूरतमंद जानवरों के लिए एक बड़ा बचाव नेटवर्क बन चुका है।",
-          "story.quote":
-            "“जब हर जानवर सुरक्षित, देखभाल में और प्यार से घिरा हो, तब दुनिया बेहतर बनती है।”",
-          "story.button": "हमारे मिशन से जुड़ें",
+              const nextTheme = isDark ? "light" : "dark";
 
-          "adopt.eyebrow": "हमारे समुदाय की प्रतिक्रिया",
-          "adopt.title":
-            "लोग हर बचाए गए जीवन के लिए हमारी देखभाल, करुणा और समर्पण की प्रशंसा करते हैं।",
-          "adopt.button": "अपनी प्रतिक्रिया साझा करें",
-          "pet1.badge": "सत्यापित समीक्षा",
-          "pet1.type": "स्वयंसेवक",
-          "pet1.age": "2024",
-          "pet1.name": "आरव मेहता",
-          "pet1.text":
-            "यह NGO वास्तव में बचाए गए जानवरों को प्रेम, देखभाल और गरिमा के साथ दूसरा मौका देता है।",
-          "pet1.feature1": "दयालु",
-          "pet1.feature2": "पारदर्शी",
+              document.documentElement.setAttribute("data-theme", nextTheme);
+              localStorage.setItem("paw-purpose-theme", nextTheme);
+              updateThemeButton(nextTheme === "dark");
+            });
 
-          "pet2.badge": "समर्थक प्रतिक्रिया",
-          "pet2.type": "समर्थक",
-          "pet2.age": "सकारात्मक",
-          "pet2.name": "मीरा शर्मा",
-          "pet2.text":
-            "टीम जानवरों की देखभाल, पुनर्प्राप्ति और सुरक्षित घर मिलने में असीम समर्पण दिखाती है।",
-          "pet2.feature1": "दयालु",
-          "pet2.feature2": "समर्पित",
+            const translations = {
+              en: {
+                "topbar.tagline": "Compassion in action for every rescued life.",
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.programs": "Programs",
+                "nav.adopt": "Adopt",
+                "nav.contact": "Contact",
 
-          "pet3.badge": "यशवंत ठाकुर की प्रतिक्रिया",
-          "pet3.type": "समर्थक",
-          "pet3.age": "सकारात्मक",
-          "pet3.name": "यशवंत ठाकुर",
-          "pet3.text":
-            "एक समर्पित NGO जो बेसहारा जानवरों को खाना, आश्रय, चिकित्सा देखभाल और सुरक्षित दूसरी जिंदगी का मौका देता है। 🐾❤️",
-          "pet3.feature1": "सहायक",
-          "pet3.feature2": "उपयोगी",
+                "hero.eyebrow": "Rescuing hearts, one paw at a time",
+                "hero.titleLine1": "Helping animals",
+                "hero.titleLine2": "find home, healing & hope.",
+                "hero.text":
+                  "We rescue abandoned, injured and neglected animals, provide medical care and help them find loving forever families. Together, we create a kinder world for every living being.",
+                "hero.primaryBtn": "Explore our work",
+                "hero.savedLabel": "animals saved",
 
-          "donate.eyebrow":
-            " यह वीडियो मेरे कुत्ते सुल्तान के लिए है, जिसकी हाल ही में मौत हो गई। इस वीडियो के ज़रिए मैं दिखाना चाहता हूँ कि मैं उससे कितना प्यार करता हूँ और उसे कितना याद करता हूँ।",
-          "donate.title": "हर बचाए गए जानवर को दूसरा मौका दें।",
-          "donate.text":
-            "🐾 कई बेसहारा जानवर भूख, डर, अकेलेपन और दर्द से गुज़रते हैं, और उनके पास मदद मांगने के लिए कोई आवाज़ नहीं होती। इस वीडियो में कुत्ते और उसके मालिक के बीच का रिश्ता हमें याद दिलाता है कि जानवर उन लोगों पर कितना गहरा भरोसा और प्यार करते हैं और उन पर निर्भर रहते हैं जिन्हें वे अपना परिवार मानते हैं। कुत्ते के लिए, प्यार करने वाला मालिक सिर्फ़ एक इंसान नहीं होता — वे ही उसका घर, सुरक्षा और परिवार होते हैं। लेकिन जब यह रिश्ता टूट जाता है, तो दुनिया एक डरावनी जगह बन सकती है। थोड़ा सा खाना, साफ़ पानी, मेडिकल देखभाल, रहने की जगह या बस थोड़ी सी दयालुता भी बहुत बड़ा फ़र्क ला सकती है। हो सकता है कि वे मदद न मांग पाएं, लेकिन हम उनकी बात सुनने का फ़ैसला कर सकते हैं। दयालुता का हर छोटा सा काम किसी जानवर को उम्मीद, सुकून और बेहतर ज़िंदगी का मौका दे सकता है।",
+                "stats.saved": "Rescued lives",
+                "stats.volunteers": "Volunteer partners",
+                "stats.shelters": "Rescue shelters",
+                "stats.years": "Years of care",
 
-          "footer.tagline":
-            "जानवरों को गरिमा, सुरक्षा और प्यार के साथ बचाएँ, पुनर्वास करें और नया घर दें।",
-          "footer.explore": "जानकारी",
-          "footer.about": "हमारे बारे में",
-          "footer.programs": "कार्यक्रम",
-          "footer.adopt": "प्रतिक्रिया",
-          "footer.connect": "संपर्क करें",
-          "footer.email": "हमें ईमेल करें",
-          "footer.call": "हमें कॉल करें",
-          "footer.instagram": "इंस्टाग्राम",
-          "footer.facebook": "फेसबुक",
-          "footer.made": "जानवरों के लिए करुणा से बनाया गया।",
-        },
-      };
+                "about.eyebrow": "Who we are",
+                "about.title": "Compassion meets action.",
+                "about.text1":
+                  "Paw & Purpose is a community-led animal welfare organization working to prevent cruelty, rescue vulnerable animals and build awareness around responsible pet care.",
+                "about.text2":
+                  "From emergency medical aid to adoption support and humane education, we work with local partners to ensure every rescued animal receives the dignity, care and love they deserve.",
+                "about.feature1": "Emergency rescue & rehabilitation",
+                "about.feature2": "Spay/neuter awareness and support",
+                "about.feature3": "Responsible adoption matching",
+                "about.button": "See how we help",
 
-      function getLanguage() {
-        return localStorage.getItem("paw-purpose-language") || "en";
-      }
+                "programs.eyebrow": "Our work",
+                "programs.title": "Every rescue starts with kindness.",
+                "programs.text":
+                  "We provide immediate care and long-term support to animals who have been neglected, injured or abandoned.",
+                "program1.title": "Rescue & Recovery",
+                "program1.text":
+                  "We rescue vulnerable animals from danger and provide medical treatment, food and safe shelter.",
+                "program1.link": "Learn more →",
+                "program2.title": "Adoption & Rehoming",
+                "program2.text":
+                  "Matching rescued animals with loving families through our thoughtful adoption process.",
+                "program2.link": "Learn more →",
+                "program3.title": "Community Care",
+                "program3.text":
+                  "We run vaccination drives, sterilization programs and education for humane pet ownership.",
+                "program3.link": "Learn more →",
 
-      function setLanguage(language) {
-        const selectedTranslations = translations[language];
+                "story.eyebrow": "Our story",
+                "story.title": "Saving lives, changing futures.",
+                "story.text":
+                  "What started as a small volunteer effort has grown into a rescue network that provides emergency support, long-term shelter, and a second chance for animals in need.",
+                "story.quote":
+                  "“The world is a better place when every animal is safe, cared for and loved.”",
+                "story.button": "Join our mission",
 
-        localStorage.setItem("paw-purpose-language", language);
-        document.documentElement.lang = language;
+                "adopt.eyebrow": "Feedback from our community",
+                "adopt.title":
+                  "People love the care, compassion and dedication we bring to every rescued life.",
+                "adopt.button": "Share your feedback",
+                "pet1.badge": "Verified review",
+                "pet1.type": "Volunteer",
+                "pet1.age": "2024",
+                "pet1.name": "Aarav Mehta",
+                "pet1.text":
+                  "This NGO truly gives rescued animals a second chance with love, care and dignity.",
+                "pet1.feature1": "Compassionate",
+                "pet1.feature2": "Transparent",
 
-        document.querySelectorAll("[data-i18n]").forEach((element) => {
-          const key = element.getAttribute("data-i18n");
+                "pet2.badge": "Supporter feedback",
+                "pet2.type": "Supporter",
+                "pet2.age": "Positive",
+                "pet2.name": "Meera Sharma",
+                "pet2.text":
+                  "The team is deeply committed, humane and consistent in helping animals recover and find safe homes.",
+                "pet2.feature1": "Kind",
+                "pet2.feature2": "Dedicated",
 
-          if (selectedTranslations[key]) {
-            element.textContent = selectedTranslations[key];
-          }
-        });
+                "pet3.badge": "Yashwant Thakur's feedback",
+                "pet3.type": "Supporter",
+                "pet3.age": "Positive",
+                "pet3.name": "Yashwant Thakur",
+                "pet3.text":
+                  "A dedicated NGO providing abandoned animals with food, shelter, medical care, and a safe second chance at life. 🐾❤️",
+                "pet3.feature1": "Supportive",
+                "pet3.feature2": "Helpful",
 
-        languageToggle.textContent = language === "en" ? "हिन्दी" : "English";
-        languageToggle.setAttribute(
-          "aria-label",
-          language === "en"
-            ? "Switch language to Hindi"
-            : "Switch language to English",
-        );
-      }
+                "donate.eyebrow":
+                  " video in the memory of my dog  ",
+                "donate.title":
+                  " tribute to my little boy caretaker brother friend and companion 🐾  ",
+                "donate.text":
+                  "🐾 Many abandoned animals go through hunger, fear, loneliness, and pain without having a voice to ask for help. The bond between a dog and its owner shown in this video reminds us how deeply animals trust, love, and depend on the people they call family. For a dog, a loving owner is not just a person — they are home, safety, and family. But when that bond is lost, the world can become a frightening place. A little food, clean water, medical care, shelter, or simply a moment of kindness can make a huge difference. They may not be able to ask for help, but we can choose to listen. Every small act of kindness can give an animal hope, comfort, and a chance at a better life.",
 
-      const savedLanguage = getLanguage();
-      setLanguage(savedLanguage);
+                "footer.tagline":
+                  "Rescue, rehabilitate and rehome animals with dignity, safety and love.",
+                "footer.explore": "Explore",
+                "footer.about": "About us",
+                "footer.programs": "Programs",
+                "footer.adopt": "Feedback",
+                "footer.connect": "Connect",
+                "footer.email": "Email us",
+                "footer.call": "Call us",
+                "footer.instagram": "Instagram",
+                "footer.facebook": "Facebook",
+                "footer.made": "Made with compassion for animals.",
+              },
 
-      languageToggle.addEventListener("click", () => {
-        const currentLanguage = getLanguage();
-        const nextLanguage = currentLanguage === "en" ? "hi" : "en";
+              hi: {
+                "topbar.tagline": "हर बचाए गए जीवन के लिए करुणा और सेवा।",
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.programs": "कार्यक्रम",
+                "nav.adopt": "गोद लें",
+                "nav.contact": "संपर्क",
 
-        setLanguage(nextLanguage);
-      });
+                "hero.eyebrow": "हर पंजे के साथ एक दिल को बचाना",
+                "hero.titleLine1": "जानवरों की मदद करना",
+                "hero.titleLine2": "उन्हें घर, उपचार और उम्मीद दिलाना।",
+                "hero.text":
+                  "हम छोड़े गए, घायल और उपेक्षित जानवरों को बचाते हैं, उन्हें चिकित्सा सहायता देते हैं और प्यार करने वाले परिवारों से मिलाते हैं।",
+                "hero.primaryBtn": "हमारा काम देखें",
+                "hero.savedLabel": "जानवरों को बचाया गया",
 
-      document.getElementById("year").textContent = new Date().getFullYear();
+                "stats.saved": "बचाए गए जीवन",
+                "stats.volunteers": "स्वयंसेवी साथी",
+                "stats.shelters": "रेस्क्यू शेल्टर",
+                "stats.years": "सेवा के वर्ष",
 
-      setActiveLink();
+                "about.eyebrow": "हम कौन हैं",
+                "about.title": "करुणा से बदलाव आता है।",
+                "about.text1":
+                  "पॉ और पर्पज एक सामुदायिक  पशु कल्याण संगठन है जो क्रूरता को रोकने, कमजोर जानवरों को बचाने और जिम्मेदार पालतू देखभाल के प्रति जागरूकता फैलाने के लिए काम करता है।",
+                "about.text2":
+                  "आपातकालीन चिकित्सा सहायता से लेकर गोद लेने की सहायता और मानवीय शिक्षा तक, हम स्थानीय भागीदारों के साथ मिलकर काम करते हैं।",
+                "about.feature1": "आपातकालीन बचाव और पुनर्वास",
+                "about.feature2": "नसबंदी जागरूकता और सहायता",
+                "about.feature3": "जिम्मेदार गोद लेने की प्रक्रिया",
+                "about.button": "देखें हम कैसे मदद करते हैं",
+
+                "programs.eyebrow": "हमारा काम",
+                "programs.title": "हर बचाव की शुरुआत दयालुता से होती है।",
+                "programs.text":
+                  "हम उपेक्षित, घायल या छोड़े गए जानवरों की तत्काल मदद और दीर्घकालिक देखभाल करते हैं।",
+                "program1.title": "बचाव और पुनर्वास",
+                "program1.text":
+                  "हम कमजोर जानवरों को खतरे से बचाते हैं और उन्हें इलाज, भोजन और सुरक्षित आश्रय देते हैं।",
+                "program1.link": "और जानें →",
+                "program2.title": "गोद लेना और नया घर",
+                "program2.text":
+                  "हम बचाए गए जानवरों को प्यार करने वाले परिवारों से जोड़ते हैं।",
+                "program2.link": "और जानें →",
+                "program3.title": "सामुदायिक देखभाल",
+                "program3.text":
+                  "हम वैक्सीनेशन ड्राइव, नसबंदी कार्यक्रम और जिम्मेदार पालतू देखभाल की शिक्षा चलाते हैं।",
+                "program3.link": "और जानें →",
+
+                "story.eyebrow": "हमारी कहानी",
+                "story.title": "जीवन बचाना, भविष्य बदलना।",
+                "story.text":
+                  "जो शुरुआत में एक छोटा स्वयंसेवी प्रयास था, वह अब जरूरतमंद जानवरों के लिए एक बड़ा बचाव नेटवर्क बन चुका है।",
+                "story.quote":
+                  "“जब हर जानवर सुरक्षित, देखभाल में और प्यार से घिरा हो, तब दुनिया बेहतर बनती है।”",
+                "story.button": "हमारे मिशन से जुड़ें",
+
+                "adopt.eyebrow": "हमारे समुदाय की प्रतिक्रिया",
+                "adopt.title":
+                  "लोग हर बचाए गए जीवन के लिए हमारी देखभाल, करुणा और समर्पण की प्रशंसा करते हैं।",
+                "adopt.button": "अपनी प्रतिक्रिया साझा करें",
+                "pet1.badge": "सत्यापित समीक्षा",
+                "pet1.type": "स्वयंसेवक",
+                "pet1.age": "2024",
+                "pet1.name": "आरव मेहता",
+                "pet1.text":
+                  "यह NGO वास्तव में बचाए गए जानवरों को प्रेम, देखभाल और गरिमा के साथ दूसरा मौका देता है।",
+                "pet1.feature1": "दयालु",
+                "pet1.feature2": "पारदर्शी",
+
+                "pet2.badge": "समर्थक प्रतिक्रिया",
+                "pet2.type": "समर्थक",
+                "pet2.age": "सकारात्मक",
+                "pet2.name": "मीरा शर्मा",
+                "pet2.text":
+                  "टीम जानवरों की देखभाल, पुनर्प्राप्ति और सुरक्षित घर मिलने में असीम समर्पण दिखाती है।",
+                "pet2.feature1": "दयालु",
+                "pet2.feature2": "समर्पित",
+
+                "pet3.badge": "यशवंत ठाकुर की प्रतिक्रिया",
+                "pet3.type": "समर्थक",
+                "pet3.age": "सकारात्मक",
+                "pet3.name": "यशवंत ठाकुर",
+                "pet3.text":
+                  "एक समर्पित NGO जो बेसहारा जानवरों को खाना, आश्रय, चिकित्सा देखभाल और सुरक्षित दूसरी जिंदगी का मौका देता है। 🐾❤️",
+                "pet3.feature1": "सहायक",
+                "pet3.feature2": "उपयोगी",
+
+                "donate.eyebrow":
+                  " मेरे कुत्ते की याद में वीडियो",
+                "donate.title": " मेरे छोटे से बच्चे, देखभाल करने वाले, भाई, दोस्त और साथी को श्रद्धांजलि 🐾",
+                "donate.text":
+                  "🐾 कई बेसहारा जानवर भूख, डर, अकेलेपन और दर्द से गुज़रते हैं, और उनके पास मदद मांगने के लिए कोई आवाज़ नहीं होती। इस वीडियो में कुत्ते और उसके मालिक के बीच का रिश्ता हमें याद दिलाता है कि जानवर उन लोगों पर कितना गहरा भरोसा और प्यार करते हैं और उन पर निर्भर रहते हैं जिन्हें वे अपना परिवार मानते हैं। कुत्ते के लिए, प्यार करने वाला मालिक सिर्फ़ एक इंसान नहीं होता — वे ही उसका घर, सुरक्षा और परिवार होते हैं। लेकिन जब यह रिश्ता टूट जाता है, तो दुनिया एक डरावनी जगह बन सकती है। थोड़ा सा खाना, साफ़ पानी, मेडिकल देखभाल, रहने की जगह या बस थोड़ी सी दयालुता भी बहुत बड़ा फ़र्क ला सकती है। हो सकता है कि वे मदद न मांग पाएं, लेकिन हम उनकी बात सुनने का फ़ैसला कर सकते हैं। दयालुता का हर छोटा सा काम किसी जानवर को उम्मीद, सुकून और बेहतर ज़िंदगी का मौका दे सकता है।",
+
+                "footer.tagline":
+                  "जानवरों को गरिमा, सुरक्षा और प्यार के साथ बचाएँ, पुनर्वास करें और नया घर दें।",
+                "footer.explore": "जानकारी",
+                "footer.about": "हमारे बारे में",
+                "footer.programs": "कार्यक्रम",
+                "footer.adopt": "प्रतिक्रिया",
+                "footer.connect": "संपर्क करें",
+                "footer.email": "हमें ईमेल करें",
+                "footer.call": "हमें कॉल करें",
+                "footer.instagram": "इंस्टाग्राम",
+                "footer.facebook": "फेसबुक",
+                "footer.made": "जानवरों के लिए करुणा से बनाया गया।",
+              },
+            };
+
+            function getLanguage() {
+              return localStorage.getItem("paw-purpose-language") || "en";
+            }
+
+            function setLanguage(language) {
+              const selectedTranslations = translations[language];
+
+              localStorage.setItem("paw-purpose-language", language);
+              document.documentElement.lang = language;
+
+              document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.getAttribute("data-i18n");
+
+                if (selectedTranslations[key]) {
+                  element.textContent = selectedTranslations[key];
+                }
+              });
+
+              languageToggle.textContent = language === "en" ? "हिन्दी" : "English";
+              languageToggle.setAttribute(
+                "aria-label",
+                language === "en"
+                  ? "Switch language to Hindi"
+                  : "Switch language to English",
+              );
+            }
+
+            const savedLanguage = getLanguage();
+            setLanguage(savedLanguage);
+
+            languageToggle.addEventListener("click", () => {
+              const currentLanguage = getLanguage();
+              const nextLanguage = currentLanguage === "en" ? "hi" : "en";
+
+              setLanguage(nextLanguage);
+            });
+
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            setActiveLink();
     </script>
   </body>
 </html>
