@@ -706,16 +706,6 @@
         font-size: 0.96rem;
       }
 
-      .program-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 16px;
-        color: #ffcfaa;
-        font-size: 0.87rem;
-        font-weight: 700;
-      }
-
       .rescue {
         color: #fff;
         background: linear-gradient(
@@ -1084,6 +1074,156 @@
         }
       }
 
+      .video-ad-wrap {
+        position: relative;
+        padding: 28px 0 18px;
+        background: #000000;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      }
+
+      .video-ad-box {
+        position: relative;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: center;
+        gap: 26px;
+        padding: 26px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: none;
+        overflow: hidden;
+        color: #fff;
+      }
+
+      .video-ad-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .video-ad-copy .eyebrow {
+        margin-bottom: 14px;
+        color: #ffd7be;
+      }
+
+      .video-ad-copy .eyebrow::before {
+        background: #ffd7be;
+      }
+
+      .video-ad-copy h2 {
+        margin-bottom: 16px;
+        color: #fff;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+      }
+
+      .video-ad-copy p {
+        margin-bottom: 18px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 1rem;
+      }
+
+      .founder-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        margin-bottom: 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .founder-name {
+        display: block;
+        margin: 8px 0 12px;
+        color: #ffd7be;
+        font-weight: 700;
+        font-size: 1.08rem;
+      }
+
+      .video-ad-btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .video-ad-btns .btn-primary {
+        background: var(--primary);
+        box-shadow: 0 12px 28px rgba(255, 122, 77, 0.22);
+      }
+
+      .video-ad-btns .btn-outline {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .video-ad-btns .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .video-player {
+        position: relative;
+        overflow: hidden;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: none;
+        min-height: 320px;
+      }
+
+      .video-player video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        object-fit: cover;
+        background: #000;
+      }
+
+      .video-overlay {
+        position: absolute;
+        inset: auto 14px 14px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(8px);
+        color: #fff;
+      }
+
+      .video-overlay strong {
+        display: block;
+        font-size: 0.92rem;
+        color: #fff;
+      }
+
+      .video-overlay span {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.75rem;
+      }
+
+      .play-pill {
+        display: inline-grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(255, 122, 77, 0.9);
+        color: #fff;
+        font-size: 1.1rem;
+      }
+
       @media (max-width: 980px) {
         .nav-links {
           position: fixed;
@@ -1126,6 +1266,10 @@
 
         .footer-main {
           grid-template-columns: repeat(2, 1fr);
+        }
+
+        .video-ad-box {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -1242,6 +1386,23 @@
           padding: 0 8px;
           font-size: 0.74rem;
         }
+
+        .video-ad-box {
+          padding: 18px;
+        }
+
+        .video-ad-btns {
+          display: grid;
+        }
+
+        .video-ad-btns .btn {
+          width: 100%;
+        }
+
+        .video-player,
+        .video-player video {
+          min-height: 260px;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -1261,7 +1422,7 @@
     <div class="topbar">
       <div class="container topbar-inner">
         <span data-i18n="topbar.tagline">
-           developed  by yashrajbhatt follow me on instagram :- gentle_voices_lie
+          developed by yashrajbhatt follow me on instagram :- gentle_voices_lie
         </span>
 
         <div class="topbar-links">
@@ -1322,6 +1483,68 @@
         </div>
       </div>
     </header>
+
+    <section class="video-ad-wrap">
+      <div class="container">
+        <div class="video-ad-box reveal">
+          <div class="video-ad-copy">
+            <div class="eyebrow" data-i18n="videoAd.eyebrow">About Rise Above Ego</div>
+
+            <div class="founder-tag" data-i18n="videoAd.founderLabel">Founder</div>
+
+            <h2 data-i18n="videoAd.title">Jaskaran Singh</h2>
+
+            <span class="founder-name" data-i18n="videoAd.role">
+              Director of Operations at Khwaahish NGO
+            </span>
+
+            <p data-i18n="videoAd.text">
+              Jaskaran Singh is the Director of Operations at Khwaahish NGO and
+              the Founder of Rise Above Ego, an initiative focused on promoting
+              personal growth, positive thinking, and the importance of
+              overcoming ego to build better relationships and a stronger
+              society. He pursued his Bachelor of Laws (LL.B.) in Tax Law and
+              Taxation from Kumaun University, Nainital. With his background in
+              law, leadership, and social initiatives, Jaskaran Singh is
+              committed to contributing to social welfare, empowering
+              individuals, and creating a positive impact in the community.
+            </p>
+
+            <div class="video-ad-btns">
+              <a href="#contact" class="btn btn-primary" data-i18n="videoAd.primaryBtn">
+                Support us
+              </a>
+              <a href="#programs" class="btn btn-outline" data-i18n="videoAd.secondaryBtn">
+                See more
+              </a>
+            </div>
+          </div>
+
+          <div class="video-player">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85"
+            >
+              <source src="cp (1).mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="video-overlay">
+              <div>
+                <strong data-i18n="videoAd.brand">Rise Above Ego</strong>
+                <span data-i18n="videoAd.label">Animal rescue & care</span>
+              </div>
+              <div class="play-pill">▶</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <main id="home">
       <section class="hero">
@@ -1404,7 +1627,7 @@
               alt="Dog with volunteer"
             />
 
-            <div class="badge"> thanks you <br />rise above ego</div>
+            <div class="badge">thanks you <br />rise above ego</div>
           </div>
 
           <div class="about-copy reveal">
@@ -1413,7 +1636,7 @@
             <h2 data-i18n="about.title">Compassion meets action.</h2>
 
             <p data-i18n="about.text1">
-              rise above ego  is a community-led animal welfare organization
+              rise above ego is a community-led animal welfare organization
               working to prevent cruelty, rescue vulnerable animals and build
               awareness around responsible pet care.
             </p>
@@ -1464,9 +1687,7 @@
           <div class="program-grid">
             <article
               class="program-card reveal"
-              style="
-                --image: url(&quot;https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=900&q=85&quot;);
-              "
+              style="--image: url(&quot;https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=900&q=85&quot;);"
             >
               <div class="program-content">
                 <div class="program-icon">🐶</div>
@@ -1475,15 +1696,12 @@
                   We rescue vulnerable animals from danger and provide medical
                   treatment, food and safe shelter.
                 </p>
-                
               </div>
             </article>
 
             <article
               class="program-card reveal"
-              style="
-                --image: url(&quot;https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=85&quot;);
-              "
+              style="--image: url(&quot;https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=85&quot;);"
             >
               <div class="program-content">
                 <div class="program-icon">🐱</div>
@@ -1492,15 +1710,12 @@
                   Matching rescued animals with loving families through our
                   thoughtful adoption process.
                 </p>
-                
               </div>
             </article>
 
             <article
               class="program-card reveal"
-              style="
-                --image: url(&quot;https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=85&quot;);
-              "
+              style="--image: url(&quot;https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=85&quot;);"
             >
               <div class="program-content">
                 <div class="program-icon">💛</div>
@@ -1509,8 +1724,6 @@
                   We run vaccination drives, sterilization programs and
                   education for humane pet ownership.
                 </p>
-                
-                </a>
               </div>
             </article>
           </div>
@@ -1570,10 +1783,7 @@
           <div class="adoption-grid">
             <article class="pet-card reveal">
               <div class="pet-image">
-                <img
-                  src="am.jpg"
-                  alt="Volunteer feedback from Aarav Mehta"
-                />
+                <img src="am.jpg" alt="Volunteer feedback from Aarav Mehta" />
                 <span class="pet-badge" data-i18n="pet1.badge">
                   Verified review
                 </span>
@@ -1674,8 +1884,8 @@
                 Rukmini Devi Arundale
                 <span>
                   Animal-welfare advocate helped establish animal-protection
-                  institutions</span
-                >
+                  institutions
+                </span>
               </div>
             </div>
 
@@ -1701,8 +1911,8 @@
                 Maneka Sanjay Gandhi
                 <span>
                   animals right activist and founder of people for animal
-                  (PFA)</span
-                >
+                  (PFA)
+                </span>
               </div>
             </div>
 
@@ -1731,7 +1941,7 @@
         <div class="container donate-grid">
           <div class="donate-copy reveal">
             <div class="eyebrow" data-i18n="donate.eyebrow">
-             video in the memory of my dog  
+              video in the memory of my dog
             </div>
 
             <h2 data-i18n="donate.title">
@@ -1810,8 +2020,22 @@
             <li>
               <a href="tel: 6398593916" data-i18n="footer.call">Call us</a>
             </li>
-            <li><a href="https://www.instagram.com/rise_above_ego?utm_source=qr&stkn=MWtzenJ0em1odHo5bA== " data-i18n="footer.instagram">Instagram</a></li>
-            <li><a href=" https://www.facebook.com/RiseAboveEgo/?ref=NONE_xav_ig_profile_page_web#" data-i18n="footer.facebook">Facebook</a></li>
+            <li>
+              <a
+                href="https://www.instagram.com/rise_above_ego?utm_source=qr&stkn=MWtzenJ0em1odHo5bA=="
+                data-i18n="footer.instagram"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/RiseAboveEgo/?ref=NONE_xav_ig_profile_page_web#"
+                data-i18n="footer.facebook"
+              >
+                Facebook
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -1830,432 +2054,448 @@
     <div class="toast" id="toast"></div>
 
     <script>
-            const header = document.getElementById("header");
-            const navLinks = document.getElementById("navLinks");
-            const menuToggle = document.getElementById("menuToggle");
-            const themeToggle = document.getElementById("themeToggle");
-            const languageToggle = document.getElementById("languageToggle");
+      const header = document.getElementById("header");
+      const navLinks = document.getElementById("navLinks");
+      const menuToggle = document.getElementById("menuToggle");
+      const themeToggle = document.getElementById("themeToggle");
+      const languageToggle = document.getElementById("languageToggle");
 
-            window.addEventListener("scroll", () => {
-              header.classList.toggle("scrolled", window.scrollY > 20);
-              setActiveLink();
-            });
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 20);
+        setActiveLink();
+      });
 
-            menuToggle.addEventListener("click", () => {
-              const isOpen = navLinks.classList.toggle("open");
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
 
-              document.body.classList.toggle("menu-open", isOpen);
-              menuToggle.textContent = isOpen ? "×" : "☰";
-              menuToggle.setAttribute("aria-expanded", String(isOpen));
-              menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close menu" : "Open menu",
-              );
-            });
+        document.body.classList.toggle("menu-open", isOpen);
+        menuToggle.textContent = isOpen ? "×" : "☰";
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close menu" : "Open menu"
+        );
+      });
 
-            navLinks.querySelectorAll("a").forEach((link) => {
-              link.addEventListener("click", () => {
-                navLinks.classList.remove("open");
-                document.body.classList.remove("menu-open");
-                menuToggle.textContent = "☰";
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Open menu");
-              });
-            });
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          document.body.classList.remove("menu-open");
+          menuToggle.textContent = "☰";
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open menu");
+        });
+      });
 
-            const sections = document.querySelectorAll("main section[id]");
-            const navItems = document.querySelectorAll(".nav-links a");
+      const sections = document.querySelectorAll("main section[id]");
+      const navItems = document.querySelectorAll(".nav-links a");
 
-            function setActiveLink() {
-              let current = "home";
+      function setActiveLink() {
+        let current = "home";
 
-              sections.forEach((section) => {
-                const sectionTop = section.offsetTop - 150;
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 150;
 
-                if (window.scrollY >= sectionTop) {
-                  current = section.getAttribute("id");
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${current}`
+          );
+        });
+      }
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+        }
+      );
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+
+      const counters = document.querySelectorAll("[data-count]");
+      const statsSection = document.querySelector(".stats-grid");
+      let statsAnimated = false;
+
+      const statsObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+
+            counters.forEach((counter) => {
+              const target = Number(counter.dataset.count);
+              const duration = 1800;
+              const start = performance.now();
+
+              function updateCounter(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const value = Math.floor(progress * target);
+
+                counter.textContent = value.toLocaleString();
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateCounter);
                 }
-              });
+              }
 
-              navItems.forEach((link) => {
-                link.classList.toggle(
-                  "active",
-                  link.getAttribute("href") === `#${current}`,
-                );
-              });
-            }
-
-            const revealElements = document.querySelectorAll(".reveal");
-
-            const revealObserver = new IntersectionObserver(
-              (entries, observer) => {
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                  }
-                });
-              },
-              {
-                threshold: 0.12,
-              },
-            );
-
-            revealElements.forEach((element) => revealObserver.observe(element));
-
-            const counters = document.querySelectorAll("[data-count]");
-            const statsSection = document.querySelector(".stats-grid");
-            let statsAnimated = false;
-
-            const statsObserver = new IntersectionObserver(
-              (entries) => {
-                if (entries[0].isIntersecting && !statsAnimated) {
-                  statsAnimated = true;
-
-                  counters.forEach((counter) => {
-                    const target = Number(counter.dataset.count);
-                    const duration = 1800;
-                    const start = performance.now();
-
-                    function updateCounter(now) {
-                      const progress = Math.min((now - start) / duration, 1);
-                      const value = Math.floor(progress * target);
-
-                      counter.textContent = value.toLocaleString();
-
-                      if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                      }
-                    }
-
-                    requestAnimationFrame(updateCounter);
-                  });
-                }
-              },
-              {
-                threshold: 0.5,
-              },
-            );
-
-            if (statsSection) {
-              statsObserver.observe(statsSection);
-            }
-
-            const testimonials = document.querySelectorAll(".testimonial");
-            const dots = document.querySelectorAll(".slider-dot");
-            let currentSlide = 0;
-
-            function showSlide(index) {
-              testimonials.forEach((item, itemIndex) => {
-                item.classList.toggle("active", itemIndex === index);
-              });
-
-              dots.forEach((dot, dotIndex) => {
-                dot.classList.toggle("active", dotIndex === index);
-              });
-            }
-
-            dots.forEach((dot) => {
-              dot.addEventListener("click", () => {
-                currentSlide = Number(dot.dataset.slide);
-                showSlide(currentSlide);
-              });
+              requestAnimationFrame(updateCounter);
             });
+          }
+        },
+        {
+          threshold: 0.5,
+        }
+      );
 
-            setInterval(() => {
-              currentSlide = (currentSlide + 1) % testimonials.length;
-              showSlide(currentSlide);
-            }, 5000);
+      if (statsSection) {
+        statsObserver.observe(statsSection);
+      }
 
-            function updateThemeButton(isDark) {
-              themeToggle.textContent = isDark ? "☀️" : "🌙";
-              themeToggle.setAttribute(
-                "aria-label",
-                isDark ? "Switch to light mode" : "Switch to dark mode",
-              );
-              themeToggle.setAttribute("aria-pressed", String(isDark));
-            }
+      const testimonials = document.querySelectorAll(".testimonial");
+      const dots = document.querySelectorAll(".slider-dot");
+      let currentSlide = 0;
 
-            const savedTheme = localStorage.getItem("paw-purpose-theme") || "light";
-            const isDarkInitially = savedTheme === "dark";
+      function showSlide(index) {
+        testimonials.forEach((item, itemIndex) => {
+          item.classList.toggle("active", itemIndex === index);
+        });
 
-            document.documentElement.setAttribute(
-              "data-theme",
-              isDarkInitially ? "dark" : "light",
-            );
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("active", dotIndex === index);
+        });
+      }
 
-            updateThemeButton(isDarkInitially);
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          currentSlide = Number(dot.dataset.slide);
+          showSlide(currentSlide);
+        });
+      });
 
-            themeToggle.addEventListener("click", () => {
-              const isDark =
-                document.documentElement.getAttribute("data-theme") === "dark";
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % testimonials.length;
+        showSlide(currentSlide);
+      }, 5000);
 
-              const nextTheme = isDark ? "light" : "dark";
+      function updateThemeButton(isDark) {
+        themeToggle.textContent = isDark ? "☀️" : "🌙";
+        themeToggle.setAttribute(
+          "aria-label",
+          isDark ? "Switch to light mode" : "Switch to dark mode"
+        );
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+      }
 
-              document.documentElement.setAttribute("data-theme", nextTheme);
-              localStorage.setItem("paw-purpose-theme", nextTheme);
-              updateThemeButton(nextTheme === "dark");
-            });
+      const savedTheme = localStorage.getItem("paw-purpose-theme") || "light";
+      const isDarkInitially = savedTheme === "dark";
 
-            const translations = {
-              en: {
-                "topbar.tagline": "developed  by yashrajbhatt follow me on instagram :- gentle_voices_lie.",
-                "nav.home": "Home",
-                "nav.about": "About",
-                "nav.programs": "Programs",
-                "nav.adopt": "Adopt",
-                "nav.contact": "Contact",
+      document.documentElement.setAttribute(
+        "data-theme",
+        isDarkInitially ? "dark" : "light"
+      );
 
-                "hero.eyebrow": "Rescuing hearts, one paw at a time",
-                "hero.titleLine1": "Helping animals",
-                "hero.titleLine2": "find home, healing & hope.",
-                "hero.text":
-                  "We rescue abandoned, injured and neglected animals, provide medical care and help them find loving forever families. Together, we create a kinder world for every living being.",
-                "hero.primaryBtn": "Explore our work",
-                "hero.savedLabel": "animals saved",
+      updateThemeButton(isDarkInitially);
 
-                "stats.saved": "Rescued lives",
-                "stats.volunteers": "Volunteer partners",
-                "stats.shelters": "Rescue shelters",
-                "stats.years": "Years of care",
+      themeToggle.addEventListener("click", () => {
+        const isDark =
+          document.documentElement.getAttribute("data-theme") === "dark";
 
-                "about.eyebrow": "Who we are",
-                "about.title": "Compassion meets action.",
-                "about.text1":
-                  "rise above ego  is a community-led animal welfare organization working to prevent cruelty, rescue vulnerable animals and build awareness around responsible pet care.",
-                "about.text2":
-                  "From emergency medical aid to adoption support and humane education, we work with local partners to ensure every rescued animal receives the dignity, care and love they deserve.",
-                "about.feature1": "Emergency rescue & rehabilitation",
-                "about.feature2": "Spay/neuter awareness and support",
-                "about.feature3": "Responsible adoption matching",
-                "about.button": "See how we help",
+        const nextTheme = isDark ? "light" : "dark";
 
-                "programs.eyebrow": "Our work",
-                "programs.title": "Every rescue starts with kindness.",
-                "programs.text":
-                  "We provide immediate care and long-term support to animals who have been neglected, injured or abandoned.",
-                "program1.title": "Rescue & Recovery",
-                "program1.text":
-                  "We rescue vulnerable animals from danger and provide medical treatment, food and safe shelter.",
-                "program1.link": "Learn more →",
-                "program2.title": "Adoption & Rehoming",
-                "program2.text":
-                  "Matching rescued animals with loving families through our thoughtful adoption process.",
-                "program2.link": "Learn more →",
-                "program3.title": "Community Care",
-                "program3.text":
-                  "We run vaccination drives, sterilization programs and education for humane pet ownership.",
-                "program3.link": "Learn more →",
+        document.documentElement.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("paw-purpose-theme", nextTheme);
+        updateThemeButton(nextTheme === "dark");
+      });
 
-                "story.eyebrow": "Our story",
-                "story.title": "Saving lives, changing futures.",
-                "story.text":
-                  "What started as a small volunteer effort has grown into a rescue network that provides emergency support, long-term shelter, and a second chance for animals in need.",
-                "story.quote":
-                  "“The world is a better place when every animal is safe, cared for and loved.”",
-                "story.button": "Join our mission",
+      const translations = {
+        en: {
+          "topbar.tagline": "developed by yashrajbhatt follow me on instagram :- gentle_voices_lie.",
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.programs": "Programs",
+          "nav.adopt": "Adopt",
+          "nav.contact": "Contact",
 
-                "adopt.eyebrow": "Feedback from our community",
-                "adopt.title":
-                  "People love the care, compassion and dedication we bring to every rescued life.",
-                "adopt.button": "Share your feedback",
-                "pet1.badge": "Verified review",
-                "pet1.type": "Volunteer",
-                "pet1.age": "2024",
-                "pet1.name": "Aarav Mehta",
-                "pet1.text":
-                  "This NGO truly gives rescued animals a second chance with love, care and dignity.",
-                "pet1.feature1": "Compassionate",
-                "pet1.feature2": "Transparent",
+          "videoAd.eyebrow": "About Rise Above Ego",
+          "videoAd.title": "Jaskaran Singh",
+          "videoAd.founderLabel": "Founder",
+          "videoAd.role": "Director of Operations at Khwaahish NGO",
+          "videoAd.text":
+            "Jaskaran Singh is the Director of Operations at Khwaahish NGO and the Founder of Rise Above Ego, an initiative focused on promoting personal growth, positive thinking, and the importance of overcoming ego to build better relationships and a stronger society. He pursued his Bachelor of Laws (LL.B.) in Tax Law and Taxation from Kumaun University, Nainital. With his background in law, leadership, and social initiatives, Jaskaran Singh is committed to contributing to social welfare, empowering individuals, and creating a positive impact in the community.",
+          "videoAd.primaryBtn": "Support us",
+          "videoAd.secondaryBtn": "See more",
+          "videoAd.brand": "Rise Above Ego",
+          "videoAd.label": "Animal rescue & care",
 
-                "pet2.badge": "Supporter feedback",
-                "pet2.type": "Supporter",
-                "pet2.age": "Positive",
-                "pet2.name": "Meera Sharma",
-                "pet2.text":
-                  "The team is deeply committed, humane and consistent in helping animals recover and find safe homes.",
-                "pet2.feature1": "Kind",
-                "pet2.feature2": "Dedicated",
+          "hero.eyebrow": "Rescuing hearts, one paw at a time",
+          "hero.titleLine1": "Helping animals",
+          "hero.titleLine2": "find home, healing & hope.",
+          "hero.text":
+            "We rescue abandoned, injured and neglected animals, provide medical care and help them find loving forever families. Together, we create a kinder world for every living being.",
+          "hero.primaryBtn": "Explore our work",
+          "hero.savedLabel": "animals saved",
 
-                "pet3.badge": "Yashwant Thakur's feedback",
-                "pet3.type": "Supporter",
-                "pet3.age": "Positive",
-                "pet3.name": "Yashwant Thakur",
-                "pet3.text":
-                  "A dedicated NGO providing abandoned animals with food, shelter, medical care, and a safe second chance at life. 🐾❤️",
-                "pet3.feature1": "Supportive",
-                "pet3.feature2": "Helpful",
+          "stats.saved": "Rescued lives",
+          "stats.volunteers": "Volunteer partners",
+          "stats.shelters": "Rescue shelters",
+          "stats.years": "Years of care",
 
-                "donate.eyebrow":
-                  " video in the memory of my dog  ",
-                "donate.title":
-                  " tribute to my little boy caretaker brother friend and companion 🐾  ",
-                "donate.text":
-                  "🐾 Many abandoned animals go through hunger, fear, loneliness, and pain without having a voice to ask for help. The bond between a dog and its owner shown in this video reminds us how deeply animals trust, love, and depend on the people they call family. For a dog, a loving owner is not just a person — they are home, safety, and family. But when that bond is lost, the world can become a frightening place. A little food, clean water, medical care, shelter, or simply a moment of kindness can make a huge difference. They may not be able to ask for help, but we can choose to listen. Every small act of kindness can give an animal hope, comfort, and a chance at a better life.",
+          "about.eyebrow": "Who we are",
+          "about.title": "Compassion meets action.",
+          "about.text1":
+            "rise above ego is a community-led animal welfare organization working to prevent cruelty, rescue vulnerable animals and build awareness around responsible pet care.",
+          "about.text2":
+            "From emergency medical aid to adoption support and humane education, we work with local partners to ensure every rescued animal receives the dignity, care and love they deserve.",
+          "about.feature1": "Emergency rescue & rehabilitation",
+          "about.feature2": "Spay/neuter awareness and support",
+          "about.feature3": "Responsible adoption matching",
+          "about.button": "See how we help",
 
-                "footer.tagline":
-                  "Rescue, rehabilitate and rehome animals with dignity, safety and love.",
-                "footer.explore": "Explore",
-                "footer.about": "About us",
-                "footer.programs": "Programs",
-                "footer.adopt": "Feedback",
-                "footer.connect": "Connect",
-                "footer.email": "Email us",
-                "footer.call": "Call us",
-                "footer.instagram": "Instagram",
-                "footer.facebook": "Facebook",
-                "footer.made": "Made with compassion for animals.",
-              },
+          "programs.eyebrow": "Our work",
+          "programs.title": "Every rescue starts with kindness.",
+          "programs.text":
+            "We provide immediate care and long-term support to animals who have been neglected, injured or abandoned.",
+          "program1.title": "Rescue & Recovery",
+          "program1.text":
+            "We rescue vulnerable animals from danger and provide medical treatment, food and safe shelter.",
+          "program2.title": "Adoption & Rehoming",
+          "program2.text":
+            "Matching rescued animals with loving families through our thoughtful adoption process.",
+          "program3.title": "Community Care",
+          "program3.text":
+            "We run vaccination drives, sterilization programs and education for humane pet ownership.",
 
-              hi: {
-                "topbar.tagline": "यशराज भट्ट द्वारा विकसित। मुझे इंस्टाग्राम पर फॉलो करें: gentle_voices_lie",
-                "nav.home": "होम",
-                "nav.about": "हमारे बारे में",
-                "nav.programs": "कार्यक्रम",
-                "nav.adopt": "गोद लें",
-                "nav.contact": "संपर्क",
+          "story.eyebrow": "Our story",
+          "story.title": "Saving lives, changing futures.",
+          "story.text":
+            "What started as a small volunteer effort has grown into a rescue network that provides emergency support, long-term shelter, and a second chance for animals in need.",
+          "story.quote":
+            "“The world is a better place when every animal is safe, cared for and loved.”",
+          "story.button": "Join our mission",
 
-                "hero.eyebrow": "हर पंजे के साथ एक दिल को बचाना",
-                "hero.titleLine1": "जानवरों की मदद करना",
-                "hero.titleLine2": "उन्हें घर, उपचार और उम्मीद दिलाना।",
-                "hero.text":
-                  "हम छोड़े गए, घायल और उपेक्षित जानवरों को बचाते हैं, उन्हें चिकित्सा सहायता देते हैं और प्यार करने वाले परिवारों से मिलाते हैं।",
-                "hero.primaryBtn": "हमारा काम देखें",
-                "hero.savedLabel": "जानवरों को बचाया गया",
+          "adopt.eyebrow": "Feedback from our community",
+          "adopt.title":
+            "People love the care, compassion and dedication we bring to every rescued life.",
+          "adopt.button": "Share your feedback",
+          "pet1.badge": "Verified review",
+          "pet1.type": "Volunteer",
+          "pet1.age": "2024",
+          "pet1.name": "Aarav Mehta",
+          "pet1.text":
+            "This NGO truly gives rescued animals a second chance with love, care and dignity.",
+          "pet1.feature1": "Compassionate",
+          "pet1.feature2": "Transparent",
 
-                "stats.saved": "बचाए गए जीवन",
-                "stats.volunteers": "स्वयंसेवी साथी",
-                "stats.shelters": "रेस्क्यू शेल्टर",
-                "stats.years": "सेवा के वर्ष",
+          "pet2.badge": "Supporter feedback",
+          "pet2.type": "Supporter",
+          "pet2.age": "Positive",
+          "pet2.name": "Meera Sharma",
+          "pet2.text":
+            "The team is deeply committed, humane and consistent in helping animals recover and find safe homes.",
+          "pet2.feature1": "Kind",
+          "pet2.feature2": "Dedicated",
 
-                "about.eyebrow": "हम कौन हैं",
-                "about.title": "करुणा से बदलाव आता है।",
-                "about.text1":
-                  "  राइज  अबव ईगो  एक सामुदायिक  पशु कल्याण संगठन है जो क्रूरता को रोकने, कमजोर जानवरों को बचाने और जिम्मेदार पालतू देखभाल के प्रति जागरूकता फैलाने के लिए काम करता है।",
-                "about.text2":
-                  "आपातकालीन चिकित्सा सहायता से लेकर गोद लेने की सहायता और मानवीय शिक्षा तक, हम स्थानीय भागीदारों के साथ मिलकर काम करते हैं।",
-                "about.feature1": "आपातकालीन बचाव और पुनर्वास",
-                "about.feature2": "नसबंदी जागरूकता और सहायता",
-                "about.feature3": "जिम्मेदार गोद लेने की प्रक्रिया",
-                "about.button": "देखें हम कैसे मदद करते हैं",
+          "pet3.badge": "Yashwant Thakur's feedback",
+          "pet3.type": "Supporter",
+          "pet3.age": "Positive",
+          "pet3.name": "Yashwant Thakur",
+          "pet3.text":
+            "A dedicated NGO providing abandoned animals with food, shelter, medical care, and a safe second chance at life. 🐾❤️",
+          "pet3.feature1": "Supportive",
+          "pet3.feature2": "Helpful",
 
-                "programs.eyebrow": "हमारा काम",
-                "programs.title": "हर बचाव की शुरुआत दयालुता से होती है।",
-                "programs.text":
-                  "हम उपेक्षित, घायल या छोड़े गए जानवरों की तत्काल मदद और दीर्घकालिक देखभाल करते हैं।",
-                "program1.title": "बचाव और पुनर्वास",
-                "program1.text":
-                  "हम कमजोर जानवरों को खतरे से बचाते हैं और उन्हें इलाज, भोजन और सुरक्षित आश्रय देते हैं।",
-                "program1.link": "और जानें →",
-                "program2.title": "गोद लेना और नया घर",
-                "program2.text":
-                  "हम बचाए गए जानवरों को प्यार करने वाले परिवारों से जोड़ते हैं।",
-                "program2.link": "और जानें →",
-                "program3.title": "सामुदायिक देखभाल",
-                "program3.text":
-                  "हम वैक्सीनेशन ड्राइव, नसबंदी कार्यक्रम और जिम्मेदार पालतू देखभाल की शिक्षा चलाते हैं।",
-                "program3.link": "और जानें →",
+          "donate.eyebrow": "video in the memory of my dog",
+          "donate.title":
+            "tribute to my little boy caretaker brother friend and companion 🐾",
+          "donate.text":
+            "🐾 Many abandoned animals go through hunger, fear, loneliness, and pain without having a voice to ask for help. The bond between a dog and its owner shown in this video reminds us how deeply animals trust, love, and depend on the people they call family. For a dog, a loving owner is not just a person — they are home, safety, and family. But when that bond is lost, the world can become a frightening place. A little food, clean water, medical care, shelter, or simply a moment of kindness can make a huge difference. They may not be able to ask for help, but we can choose to listen. Every small act of kindness can give an animal hope, comfort, and a chance at a better life.",
 
-                "story.eyebrow": "हमारी कहानी",
-                "story.title": "जीवन बचाना, भविष्य बदलना।",
-                "story.text":
-                  "जो शुरुआत में एक छोटा स्वयंसेवी प्रयास था, वह अब जरूरतमंद जानवरों के लिए एक बड़ा बचाव नेटवर्क बन चुका है।",
-                "story.quote":
-                  "“जब हर जानवर सुरक्षित, देखभाल में और प्यार से घिरा हो, तब दुनिया बेहतर बनती है।”",
-                "story.button": "हमारे मिशन से जुड़ें",
+          "footer.tagline":
+            "Rescue, rehabilitate and rehome animals with dignity, safety and love.",
+          "footer.explore": "Explore",
+          "footer.about": "About us",
+          "footer.programs": "Programs",
+          "footer.adopt": "Feedback",
+          "footer.connect": "Connect",
+          "footer.email": "Email us",
+          "footer.call": "Call us",
+          "footer.instagram": "Instagram",
+          "footer.facebook": "Facebook",
+          "footer.made": "Made with compassion for animals.",
+        },
 
-                "adopt.eyebrow": "हमारे समुदाय की प्रतिक्रिया",
-                "adopt.title":
-                  "लोग हर बचाए गए जीवन के लिए हमारी देखभाल, करुणा और समर्पण की प्रशंसा करते हैं।",
-                "adopt.button": "अपनी प्रतिक्रिया साझा करें",
-                "pet1.badge": "सत्यापित समीक्षा",
-                "pet1.type": "स्वयंसेवक",
-                "pet1.age": "2024",
-                "pet1.name": "आरव मेहता",
-                "pet1.text":
-                  "यह NGO वास्तव में बचाए गए जानवरों को प्रेम, देखभाल और गरिमा के साथ दूसरा मौका देता है।",
-                "pet1.feature1": "दयालु",
-                "pet1.feature2": "पारदर्शी",
+        hi: {
+          "topbar.tagline":
+            "यशराज भट्ट द्वारा विकसित। मुझे इंस्टाग्राम पर फॉलो करें: gentle_voices_lie",
+          "nav.home": "होम",
+          "nav.about": "हमारे बारे में",
+          "nav.programs": "कार्यक्रम",
+          "nav.adopt": "गोद लें",
+          "nav.contact": "संपर्क",
 
-                "pet2.badge": "समर्थक प्रतिक्रिया",
-                "pet2.type": "समर्थक",
-                "pet2.age": "सकारात्मक",
-                "pet2.name": "मीरा शर्मा",
-                "pet2.text":
-                  "टीम जानवरों की देखभाल, पुनर्प्राप्ति और सुरक्षित घर मिलने में असीम समर्पण दिखाती है।",
-                "pet2.feature1": "दयालु",
-                "pet2.feature2": "समर्पित",
+          "videoAd.eyebrow": "राइज अब्व ईगो के बारे में",
+          "videoAd.title": "जसकरण सिंह",
+          "videoAd.founderLabel": "संस्थापक",
+          "videoAd.role": "ख्वाहिश एनजीओ में ऑपरेशंस डायरेक्टर",
+          "videoAd.text":
+            "जसकरण सिंह ख्वाहिश एनजीओ में ऑपरेशंस डायरेक्टर हैं और राइज अब्व ईगो के संस्थापक हैं, जो व्यक्तिगत विकास, सकारात्मक सोच और अहंकार को दूर करने के महत्व को बढ़ावा देने के लिए एक पहल है ताकि बेहतर रिश्ते और मजबूत समाज का निर्माण किया जा सके। उन्होंने कुमाऊं विश्वविद्यालय, नैनीताल से टैक्स लॉ और टैक्सेशन में बैचलर ऑफ लॉ (LL.B.) किया। कानून, नेतृत्व और सामाजिक पहलुओं के अनुभव के साथ, जसकरण सिंह सामाजिक कल्याण, व्यक्तियों को सशक्त बनाने और समुदाय में सकारात्मक प्रभाव डालने के लिए प्रतिबद्ध हैं।",
+          "videoAd.primaryBtn": "हमारा सहयोग करें",
+          "videoAd.secondaryBtn": "और देखें",
+          "videoAd.brand": "राइज अब्व ईगो",
+          "videoAd.label": "पशु बचाव और देखभाल",
 
-                "pet3.badge": "यशवंत ठाकुर की प्रतिक्रिया",
-                "pet3.type": "समर्थक",
-                "pet3.age": "सकारात्मक",
-                "pet3.name": "यशवंत ठाकुर",
-                "pet3.text":
-                  "एक समर्पित NGO जो बेसहारा जानवरों को खाना, आश्रय, चिकित्सा देखभाल और सुरक्षित दूसरी जिंदगी का मौका देता है। 🐾❤️",
-                "pet3.feature1": "सहायक",
-                "pet3.feature2": "उपयोगी",
+          "hero.eyebrow": "हर पंजे के साथ एक दिल को बचाना",
+          "hero.titleLine1": "जानवरों की मदद करना",
+          "hero.titleLine2": "उन्हें घर, उपचार और उम्मीद दिलाना।",
+          "hero.text":
+            "हम छोड़े गए, घायल और उपेक्षित जानवरों को बचाते हैं, उन्हें चिकित्सा सहायता देते हैं और प्यार करने वाले परिवारों से मिलाते हैं।",
+          "hero.primaryBtn": "हमारा काम देखें",
+          "hero.savedLabel": "जानवरों को बचाया गया",
 
-                "donate.eyebrow":
-                  " मेरे कुत्ते की याद में वीडियो",
-                "donate.title": " मेरे छोटे से बच्चे, देखभाल करने वाले, भाई, दोस्त और साथी को श्रद्धांजलि 🐾",
-                "donate.text":
-                  "🐾 कई बेसहारा जानवर भूख, डर, अकेलेपन और दर्द से गुज़रते हैं, और उनके पास मदद मांगने के लिए कोई आवाज़ नहीं होती। इस वीडियो में कुत्ते और उसके मालिक के बीच का रिश्ता हमें याद दिलाता है कि जानवर उन लोगों पर कितना गहरा भरोसा और प्यार करते हैं और उन पर निर्भर रहते हैं जिन्हें वे अपना परिवार मानते हैं। कुत्ते के लिए, प्यार करने वाला मालिक सिर्फ़ एक इंसान नहीं होता — वे ही उसका घर, सुरक्षा और परिवार होते हैं। लेकिन जब यह रिश्ता टूट जाता है, तो दुनिया एक डरावनी जगह बन सकती है। थोड़ा सा खाना, साफ़ पानी, मेडिकल देखभाल, रहने की जगह या बस थोड़ी सी दयालुता भी बहुत बड़ा फ़र्क ला सकती है। हो सकता है कि वे मदद न मांग पाएं, लेकिन हम उनकी बात सुनने का फ़ैसला कर सकते हैं। दयालुता का हर छोटा सा काम किसी जानवर को उम्मीद, सुकून और बेहतर ज़िंदगी का मौका दे सकता है।",
+          "stats.saved": "बचाए गए जीवन",
+          "stats.volunteers": "स्वयंसेवी साथी",
+          "stats.shelters": "रेस्क्यू शेल्टर",
+          "stats.years": "सेवा के वर्ष",
 
-                "footer.tagline":
-                  "जानवरों को गरिमा, सुरक्षा और प्यार के साथ बचाएँ, पुनर्वास करें और नया घर दें।",
-                "footer.explore": "जानकारी",
-                "footer.about": "हमारे बारे में",
-                "footer.programs": "कार्यक्रम",
-                "footer.adopt": "प्रतिक्रिया",
-                "footer.connect": "संपर्क करें",
-                "footer.email": "हमें ईमेल करें",
-                "footer.call": "हमें कॉल करें",
-                "footer.instagram": "इंस्टाग्राम",
-                "footer.facebook": "फेसबुक",
-                "footer.made": "जानवरों के लिए करुणा से बनाया गया।",
-              },
-            };
+          "about.eyebrow": "हम कौन हैं",
+          "about.title": "करुणा से बदलाव आता है।",
+          "about.text1":
+            "राइज अब्व ईगो एक सामुदायिक पशु कल्याण संगठन है जो क्रूरता को रोकने, कमजोर जानवरों को बचाने और जिम्मेदार पालतू देखभाल के प्रति जागरूकता फैलाने के लिए काम करता है।",
+          "about.text2":
+            "आपातकालीन चिकित्सा सहायता से लेकर गोद लेने की सहायता और मानवीय शिक्षा तक, हम स्थानीय भागीदारों के साथ मिलकर काम करते हैं।",
+          "about.feature1": "आपातकालीन बचाव और पुनर्वास",
+          "about.feature2": "नसबंदी जागरूकता और सहायता",
+          "about.feature3": "जिम्मेदार गोद लेने की प्रक्रिया",
+          "about.button": "देखें हम कैसे मदद करते हैं",
 
-            function getLanguage() {
-              return localStorage.getItem("paw-purpose-language") || "en";
-            }
+          "programs.eyebrow": "हमारा काम",
+          "programs.title": "हर बचाव की शुरुआत दयालुता से होती है।",
+          "programs.text":
+            "हम उपेक्षित, घायल या छोड़े गए जानवरों की तत्काल मदद और दीर्घकालिक देखभाल करते हैं।",
+          "program1.title": "बचाव और पुनर्वास",
+          "program1.text":
+            "हम कमजोर जानवरों को खतरे से बचाते हैं और उन्हें इलाज, भोजन और सुरक्षित आश्रय देते हैं।",
+          "program2.title": "गोद लेना और नया घर",
+          "program2.text":
+            "हम बचाए गए जानवरों को प्यार करने वाले परिवारों से जोड़ते हैं।",
+          "program3.title": "सामुदायिक देखभाल",
+          "program3.text":
+            "हम वैक्सीनेशन ड्राइव, नसबंदी कार्यक्रम और जिम्मेदार पालतू देखभाल की शिक्षा चलाते हैं।",
 
-            function setLanguage(language) {
-              const selectedTranslations = translations[language];
+          "story.eyebrow": "हमारी कहानी",
+          "story.title": "जीवन बचाना, भविष्य बदलना।",
+          "story.text":
+            "जो शुरुआत में एक छोटा स्वयंसेवी प्रयास था, वह अब जरूरतमंद जानवरों के लिए एक बड़ा बचाव नेटवर्क बन चुका है।",
+          "story.quote":
+            "“जब हर जानवर सुरक्षित, देखभाल में और प्यार से घिरा हो, तब दुनिया बेहतर बनती है。”",
+          "story.button": "हमारे मिशन से जुड़ें",
 
-              localStorage.setItem("paw-purpose-language", language);
-              document.documentElement.lang = language;
+          "adopt.eyebrow": "हमारे समुदाय की प्रतिक्रिया",
+          "adopt.title":
+            "लोग हर बचाए गए जीवन के लिए हमारी देखभाल, करुणा और समर्पण की प्रशंसा करते हैं।",
+          "adopt.button": "अपनी प्रतिक्रिया साझा करें",
+          "pet1.badge": "सत्यापित समीक्षा",
+          "pet1.type": "स्वयंसेवक",
+          "pet1.age": "2024",
+          "pet1.name": "आरव मेहता",
+          "pet1.text":
+            "यह NGO वास्तव में बचाए गए जानवरों को प्रेम, देखभाल और गरिमा के साथ दूसरा मौका देता है।",
+          "pet1.feature1": "दयालु",
+          "pet1.feature2": "पारदर्शी",
 
-              document.querySelectorAll("[data-i18n]").forEach((element) => {
-                const key = element.getAttribute("data-i18n");
+          "pet2.badge": "समर्थक प्रतिक्रिया",
+          "pet2.type": "समर्थक",
+          "pet2.age": "सकारात्मक",
+          "pet2.name": "मीरा शर्मा",
+          "pet2.text":
+            "टीम जानवरों की देखभाल, पुनर्प्राप्ति और सुरक्षित घर मिलने में असीम समर्पण दिखाती है।",
+          "pet2.feature1": "दयालु",
+          "pet2.feature2": "समर्पित",
 
-                if (selectedTranslations[key]) {
-                  element.textContent = selectedTranslations[key];
-                }
-              });
+          "pet3.badge": "यशवंत ठाकुर की प्रतिक्रिया",
+          "pet3.type": "समर्थक",
+          "pet3.age": "सकारात्मक",
+          "pet3.name": "यशवंत ठाकुर",
+          "pet3.text":
+            "एक समर्पित NGO जो बेसहारा जानवरों को खाना, आश्रय, चिकित्सा देखभाल और सुरक्षित दूसरी जिंदगी का मौका देता है। 🐾❤️",
+          "pet3.feature1": "सहायक",
+          "pet3.feature2": "उपयोगी",
 
-              languageToggle.textContent = language === "en" ? "हिन्दी" : "English";
-              languageToggle.setAttribute(
-                "aria-label",
-                language === "en"
-                  ? "Switch language to Hindi"
-                  : "Switch language to English",
-              );
-            }
+          "donate.eyebrow": "मेरे कुत्ते की याद में वीडियो",
+          "donate.title":
+            "मेरे छोटे से बच्चे, देखभाल करने वाले, भाई, दोस्त और साथी को श्रद्धांजलि 🐾",
+          "donate.text":
+            "🐾 कई बेसहारा जानवर भूख, डर, अकेलेपन और दर्द से गुज़रते हैं, और उनके पास मदद मांगने के लिए कोई आवाज़ नहीं होती। इस वीडियो में कुत्ते और उसके मालिक के बीच का रिश्ता हमें याद दिलाता है कि जानवर उन लोगों पर कितना गहरा भरोसा और प्यार करते हैं और उन पर निर्भर रहते हैं जिन्हें वे अपना परिवार मानते हैं। कुत्ते के लिए, प्यार करने वाला मालिक सिर्फ़ एक इंसान नहीं होता — वे ही उसका घर, सुरक्षा और परिवार होते हैं। लेकिन जब यह रिश्ता टूट जाता है, तो दुनिया एक डरावनी जगह बन सकती है। थोड़ा सा खाना, साफ़ पानी, मेडिकल देखभाल, रहने की जगह या बस थोड़ी सी दयालुता भी बहुत बड़ा फ़र्क ला सकती है। हो सकता है कि वे मदद न मांग पाएं, लेकिन हम उनकी बात सुनने का फ़ैसला कर सकते हैं। दयालुता का हर छोटा सा काम किसी जानवर को उम्मीद, सुकून और बेहतर ज़िंदगी का मौका दे सकता है।",
 
-            const savedLanguage = getLanguage();
-            setLanguage(savedLanguage);
+          "footer.tagline":
+            "जानवरों को गरिमा, सुरक्षा और प्यार के साथ बचाएँ, पुनर्वास करें और नया घर दें।",
+          "footer.explore": "जानकारी",
+          "footer.about": "हमारे बारे में",
+          "footer.programs": "कार्यक्रम",
+          "footer.adopt": "प्रतिक्रिया",
+          "footer.connect": "संपर्क करें",
+          "footer.email": "हमें ईमेल करें",
+          "footer.call": "हमें कॉल करें",
+          "footer.instagram": "इंस्टाग्राम",
+          "footer.facebook": "फेसबुक",
+          "footer.made": "जानवरों के लिए करुणा से बनाया गया।",
+        },
+      };
 
-            languageToggle.addEventListener("click", () => {
-              const currentLanguage = getLanguage();
-              const nextLanguage = currentLanguage === "en" ? "hi" : "en";
+      function getLanguage() {
+        return localStorage.getItem("paw-purpose-language") || "en";
+      }
 
-              setLanguage(nextLanguage);
-            });
+      function setLanguage(language) {
+        const selectedTranslations = translations[language];
 
-            document.getElementById("year").textContent = new Date().getFullYear();
+        localStorage.setItem("paw-purpose-language", language);
+        document.documentElement.lang = language;
 
-            setActiveLink();
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+
+          if (selectedTranslations[key]) {
+            element.textContent = selectedTranslations[key];
+          }
+        });
+
+        languageToggle.textContent = language === "en" ? "हिन्दी" : "English";
+        languageToggle.setAttribute(
+          "aria-label",
+          language === "en"
+            ? "Switch language to Hindi"
+            : "Switch language to English"
+        );
+      }
+
+      const savedLanguage = getLanguage();
+      setLanguage(savedLanguage);
+
+      languageToggle.addEventListener("click", () => {
+        const currentLanguage = getLanguage();
+        const nextLanguage = currentLanguage === "en" ? "hi" : "en";
+
+        setLanguage(nextLanguage);
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      setActiveLink();
     </script>
   </body>
 </html>
