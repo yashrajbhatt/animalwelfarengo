@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -497,7 +497,6 @@
         100% {
           transform: translateY(0);
         }
-
         50% {
           transform: translateY(-10px);
         }
@@ -1084,20 +1083,21 @@
 
       .founder-video-layout {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 30px;
+        grid-template-columns: 1.22fr 0.78fr;
+        gap: 44px;
         align-items: center;
         padding: 18px 0;
       }
 
       .founder-copy {
         color: #fff;
+        padding-right: 18px;
       }
 
       .founder-copy h2 {
         margin: 0 0 10px;
-        font-size: clamp(2.2rem, 3vw, 3.2rem);
-        line-height: 1.1;
+        font-size: clamp(2.4rem, 3vw, 3.5rem);
+        line-height: 1.08;
         letter-spacing: -0.04em;
       }
 
@@ -1105,15 +1105,16 @@
         display: block;
         margin-bottom: 16px;
         color: #ffd7be;
-        font-size: 1.03rem;
+        font-size: 1.08rem;
         font-weight: 700;
       }
 
       .founder-copy p {
         margin: 0;
         color: rgba(255, 255, 255, 0.82);
-        font-size: 1rem;
-        line-height: 1.8;
+        font-size: 1.03rem;
+        line-height: 1.9;
+        max-width: 690px;
       }
 
       .founder-badge {
@@ -1138,39 +1139,6 @@
         flex-wrap: wrap;
         gap: 14px;
         margin-top: 24px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 50px;
-        padding: 0 22px;
-        border-radius: 999px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: 0.25s ease;
-        cursor: pointer;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn-primary {
-        background: var(--primary);
-        color: #fff;
-        box-shadow: 0 12px 24px rgba(255, 122, 77, 0.24);
-      }
-
-      .btn-primary:hover {
-        background: var(--primary-dark);
-      }
-
-      .btn-outline {
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(255, 255, 255, 0.02);
       }
 
       .video-card {
@@ -1203,14 +1171,14 @@
         position: absolute;
         top: 14px;
         left: 14px;
-        z-index: 2;
+        z-index: 3;
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 8px 12px;
         border-radius: 999px;
         border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(0, 0, 0, 0.34);
+        background: rgba(0, 0, 0, 0.38);
         color: #fff;
         font-size: 0.75rem;
         font-weight: 700;
@@ -1219,13 +1187,67 @@
         backdrop-filter: blur(8px);
       }
 
+      .mute-btn-top {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        z-index: 4;
+        width: 42px;
+        height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.38);
+        color: #fff;
+        font-size: 1.1rem;
+        backdrop-filter: blur(8px);
+        cursor: pointer;
+      }
+
+      .center-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        width: 92px;
+        height: 92px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(255, 122, 77, 0.9);
+        color: #fff;
+        font-size: 2rem;
+        box-shadow: 0 18px 40px rgba(255, 122, 77, 0.32);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        cursor: pointer;
+        pointer-events: auto;
+      }
+
+      .center-play:hover {
+        transform: translate(-50%, -50%) scale(1.06);
+      }
+
+      .center-play.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
       .video-controls {
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 2;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.18), transparent);
+        z-index: 5;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.82),
+          rgba(0, 0, 0, 0.18),
+          transparent
+        );
         padding: 18px 16px 16px;
       }
 
@@ -1337,6 +1359,10 @@
 
         .founder-video-layout {
           grid-template-columns: 1fr;
+        }
+
+        .founder-copy {
+          padding-right: 0;
         }
       }
 
@@ -1572,6 +1598,14 @@
         <div class="video-card">
           <div class="video-shell">
             <div class="video-brand" data-i18n="videoAd.brand">Rise Above Ego</div>
+
+            <button class="mute-btn-top" id="muteTopBtn" aria-label="Mute or unmute">
+              🔊
+            </button>
+
+            <button class="center-play" id="centerPlayBtn" aria-label="Play video">
+              ▶
+            </button>
 
             <video
               id="founderVideo"
@@ -2078,10 +2112,7 @@
 
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
-          <p>
-            © <span id="year"></span> Paw &amp; Purpose. All rights reserved.
-          </p>
-
+          <p>© <span id="year"></span> Paw &amp; Purpose. All rights reserved.</p>
           <p data-i18n="footer.made">Made with compassion for animals.</p>
         </div>
       </div>
@@ -2141,7 +2172,6 @@
       }
 
       const revealElements = document.querySelectorAll(".reveal");
-
       const revealObserver = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
@@ -2424,7 +2454,7 @@
           "story.text":
             "जो शुरुआत में एक छोटा स्वयंसेवी प्रयास था, वह अब जरूरतमंद जानवरों के लिए एक बड़ा बचाव नेटवर्क बन चुका है।",
           "story.quote":
-            "“जब हर जानवर सुरक्षित, देखभाल में और प्यार से घिरा हो, तब दुनिया बेहतर बनती है。”",
+            "“जब हर जानवर सुरक्षित, देखभाल में और प्यार से घिरा हो, तब दुनिया बेहतर बनती है।”",
           "story.button": "हमारे मिशन से जुड़ें",
 
           "adopt.eyebrow": "हमारे समुदाय की प्रतिक्रिया",
@@ -2516,12 +2546,13 @@
       });
 
       document.getElementById("year").textContent = new Date().getFullYear();
-
       setActiveLink();
 
       const video = document.getElementById("founderVideo");
       const playPauseBtn = document.getElementById("playPauseBtn");
       const muteBtn = document.getElementById("muteBtn");
+      const muteTopBtn = document.getElementById("muteTopBtn");
+      const centerPlayBtn = document.getElementById("centerPlayBtn");
       const fullscreenBtn = document.getElementById("fullscreenBtn");
       const progressBar = document.getElementById("progressBar");
       const progressFill = document.getElementById("progressFill");
@@ -2532,6 +2563,27 @@
         const mins = Math.floor(safe / 60);
         const secs = Math.floor(safe % 60);
         return `${mins}:${String(secs).padStart(2, "0")}`;
+      }
+
+      function setPlayState(isPlaying) {
+        const playIcon = isPlaying ? "❚❚" : "▶";
+        playPauseBtn.textContent = playIcon;
+        centerPlayBtn.textContent = isPlaying ? "❚❚" : "▶";
+        centerPlayBtn.classList.toggle("hidden", isPlaying);
+      }
+
+      function setMuteState(isMuted) {
+        const icon = isMuted ? "🔇" : "🔊";
+        muteBtn.textContent = icon;
+        muteTopBtn.textContent = icon;
+      }
+
+      function togglePlayback() {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
       }
 
       function updateProgressUI() {
@@ -2545,23 +2597,25 @@
 
       video.addEventListener("loadedmetadata", updateProgressUI);
       video.addEventListener("timeupdate", updateProgressUI);
+
       video.addEventListener("ended", () => {
-        playPauseBtn.textContent = "▶";
+        setPlayState(false);
       });
 
-      playPauseBtn.addEventListener("click", () => {
-        if (video.paused) {
-          video.play();
-          playPauseBtn.textContent = "❚❚";
-        } else {
-          video.pause();
-          playPauseBtn.textContent = "▶";
-        }
-      });
+      video.addEventListener("play", () => setPlayState(true));
+      video.addEventListener("pause", () => setPlayState(false));
+
+      playPauseBtn.addEventListener("click", togglePlayback);
+      centerPlayBtn.addEventListener("click", togglePlayback);
 
       muteBtn.addEventListener("click", () => {
         video.muted = !video.muted;
-        muteBtn.textContent = video.muted ? "🔇" : "🔊";
+        setMuteState(video.muted);
+      });
+
+      muteTopBtn.addEventListener("click", () => {
+        video.muted = !video.muted;
+        setMuteState(video.muted);
       });
 
       progressBar.addEventListener("click", (e) => {
@@ -2579,17 +2633,8 @@
         } catch (err) {}
       });
 
-      video.addEventListener("play", () => {
-        playPauseBtn.textContent = "❚❚";
-      });
-
-      video.addEventListener("pause", () => {
-        playPauseBtn.textContent = "▶";
-      });
-
-      video.muted = false;
-      muteBtn.textContent = "🔊";
-      playPauseBtn.textContent = "❚❚";
+      setPlayState(false);
+      setMuteState(video.muted);
       video.play().catch(() => {});
     </script>
   </body>
