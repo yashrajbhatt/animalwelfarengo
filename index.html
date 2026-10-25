@@ -360,6 +360,23 @@
         color: var(--secondary);
         background: transparent;
         font-size: 1.7rem;
+        position: relative;
+        z-index: 120;
+      }
+
+      .nav-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 90;
+        background: rgba(10, 25, 24, 0.45);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+      }
+
+      .nav-overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
       }
 
       .hero {
@@ -1187,146 +1204,26 @@
         backdrop-filter: blur(8px);
       }
 
-      .mute-btn-top {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        z-index: 4;
-        width: 42px;
-        height: 42px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(0, 0, 0, 0.38);
-        color: #fff;
-        font-size: 1.1rem;
-        backdrop-filter: blur(8px);
-        cursor: pointer;
-      }
-
-      .center-play {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 3;
-        width: 92px;
-        height: 92px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: rgba(255, 122, 77, 0.9);
-        color: #fff;
-        font-size: 2rem;
-        box-shadow: 0 18px 40px rgba(255, 122, 77, 0.32);
-        transition: opacity 0.25s ease, transform 0.25s ease;
-        cursor: pointer;
-        pointer-events: auto;
-      }
-
-      .center-play:hover {
-        transform: translate(-50%, -50%) scale(1.06);
-      }
-
-      .center-play.hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-
-      .video-controls {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 5;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.82),
-          rgba(0, 0, 0, 0.18),
-          transparent
-        );
-        padding: 18px 16px 16px;
-      }
-
-      .progress-wrap {
-        width: 100%;
-        margin-bottom: 12px;
-      }
-
-      .progress-bar {
-        position: relative;
-        width: 100%;
-        height: 6px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.18);
-        overflow: hidden;
-        cursor: pointer;
-      }
-
-      .progress-fill {
-        position: absolute;
-        inset: 0 auto 0 0;
-        width: 0%;
-        background: linear-gradient(90deg, var(--primary), #ffb38d);
-        border-radius: inherit;
-      }
-
-      .control-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-
-      .controls-left,
-      .controls-right {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .icon-btn {
-        width: 38px;
-        height: 38px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        background: rgba(255, 255, 255, 0.06);
-        color: #fff;
-        cursor: pointer;
-        transition: 0.2s ease;
-      }
-
-      .icon-btn:hover {
-        background: rgba(255, 255, 255, 0.12);
-      }
-
-      .time-label {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.76rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-      }
-
       @media (max-width: 980px) {
+        .nav {
+          position: relative;
+        }
+
         .nav-links {
           position: fixed;
-          top: 124px;
+          top: 84px;
           right: -100%;
-          width: min(330px, 90%);
-          height: calc(100vh - 124px);
+          width: min(330px, 88%);
+          height: calc(100vh - 84px);
           flex-direction: column;
           align-items: flex-start;
-          gap: 18px;
-          padding: 34px 26px;
+          gap: 20px;
+          padding: 32px 24px;
           background: var(--surface);
           box-shadow: -18px 15px 40px rgba(8, 40, 42, 0.12);
-          transition: var(--transition);
+          transition: right 0.35s ease;
+          z-index: 110;
+          border-left: 1px solid var(--border);
         }
 
         .nav-links.open {
@@ -1364,6 +1261,10 @@
         .founder-copy {
           padding-right: 0;
         }
+
+        .video-shell {
+          width: min(100%, 360px);
+        }
       }
 
       @media (max-width: 700px) {
@@ -1377,6 +1278,7 @@
 
         .topbar-inner {
           justify-content: center;
+          text-align: center;
         }
 
         .topbar-links {
@@ -1442,6 +1344,22 @@
           display: block;
           text-align: center;
         }
+
+        .founder-video-banner {
+          padding-top: 22px;
+        }
+
+        .founder-copy h2 {
+          font-size: clamp(2.1rem, 8vw, 2.9rem);
+        }
+
+        .cta-row {
+          flex-direction: column;
+        }
+
+        .cta-row .btn {
+          width: 100%;
+        }
       }
 
       @media (max-width: 430px) {
@@ -1490,6 +1408,10 @@
 
         .video-shell {
           width: min(100%, 340px);
+        }
+
+        .founder-copy p {
+          font-size: 0.96rem;
         }
       }
 
@@ -1567,6 +1489,8 @@
       </div>
     </header>
 
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
     <section class="founder-video-banner">
       <div class="container founder-video-layout">
         <div class="founder-copy">
@@ -1599,18 +1523,11 @@
           <div class="video-shell">
             <div class="video-brand" data-i18n="videoAd.brand">Rise Above Ego</div>
 
-            <button class="mute-btn-top" id="muteTopBtn" aria-label="Mute or unmute">
-              🔊
-            </button>
-
-            <button class="center-play" id="centerPlayBtn" aria-label="Play video">
-              ▶
-            </button>
-
             <video
               id="founderVideo"
-              preload="metadata"
+              controls
               playsinline
+              preload="metadata"
               muted
               loop
               poster="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85"
@@ -1618,26 +1535,6 @@
               <source src="koko.mp4" type="video/mp4" />
               Your browser does not support HTML5 video.
             </video>
-
-            <div class="video-controls">
-              <div class="progress-wrap">
-                <div class="progress-bar" id="progressBar" aria-label="Video progress">
-                  <div class="progress-fill" id="progressFill"></div>
-                </div>
-              </div>
-
-              <div class="control-row">
-                <div class="controls-left">
-                  <button class="icon-btn" id="playPauseBtn" aria-label="Play or pause">❚❚</button>
-                  <button class="icon-btn" id="muteBtn" aria-label="Mute or unmute">🔊</button>
-                  <span class="time-label" id="timeLabel">0:00 / 0:00</span>
-                </div>
-
-                <div class="controls-right">
-                  <button class="icon-btn" id="fullscreenBtn" aria-label="Fullscreen">⤢</button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -2124,8 +2021,27 @@
       const header = document.getElementById("header");
       const navLinks = document.getElementById("navLinks");
       const menuToggle = document.getElementById("menuToggle");
+      const navOverlay = document.getElementById("navOverlay");
       const themeToggle = document.getElementById("themeToggle");
       const languageToggle = document.getElementById("languageToggle");
+
+      function closeMobileMenu() {
+        navLinks.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open menu");
+        navOverlay.classList.remove("visible");
+      }
+
+      function openMobileMenu() {
+        navLinks.classList.add("open");
+        document.body.classList.add("menu-open");
+        menuToggle.textContent = "×";
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close menu");
+        navOverlay.classList.add("visible");
+      }
 
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 20);
@@ -2133,20 +2049,19 @@
       });
 
       menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("open");
-        document.body.classList.toggle("menu-open", isOpen);
-        menuToggle.textContent = isOpen ? "×" : "☰";
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        const isOpen = navLinks.classList.contains("open");
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
       });
+
+      navOverlay.addEventListener("click", closeMobileMenu);
 
       navLinks.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
-          navLinks.classList.remove("open");
-          document.body.classList.remove("menu-open");
-          menuToggle.textContent = "☰";
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open menu");
+          closeMobileMenu();
         });
       });
 
@@ -2155,7 +2070,6 @@
 
       function setActiveLink() {
         let current = "home";
-
         sections.forEach((section) => {
           const sectionTop = section.offsetTop - 150;
           if (window.scrollY >= sectionTop) {
@@ -2547,95 +2461,6 @@
 
       document.getElementById("year").textContent = new Date().getFullYear();
       setActiveLink();
-
-      const video = document.getElementById("founderVideo");
-      const playPauseBtn = document.getElementById("playPauseBtn");
-      const muteBtn = document.getElementById("muteBtn");
-      const muteTopBtn = document.getElementById("muteTopBtn");
-      const centerPlayBtn = document.getElementById("centerPlayBtn");
-      const fullscreenBtn = document.getElementById("fullscreenBtn");
-      const progressBar = document.getElementById("progressBar");
-      const progressFill = document.getElementById("progressFill");
-      const timeLabel = document.getElementById("timeLabel");
-
-      function formatTime(seconds) {
-        const safe = Number.isFinite(seconds) ? Math.max(0, seconds) : 0;
-        const mins = Math.floor(safe / 60);
-        const secs = Math.floor(safe % 60);
-        return `${mins}:${String(secs).padStart(2, "0")}`;
-      }
-
-      function setPlayState(isPlaying) {
-        const playIcon = isPlaying ? "❚❚" : "▶";
-        playPauseBtn.textContent = playIcon;
-        centerPlayBtn.textContent = isPlaying ? "❚❚" : "▶";
-        centerPlayBtn.classList.toggle("hidden", isPlaying);
-      }
-
-      function setMuteState(isMuted) {
-        const icon = isMuted ? "🔇" : "🔊";
-        muteBtn.textContent = icon;
-        muteTopBtn.textContent = icon;
-      }
-
-      function togglePlayback() {
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
-        }
-      }
-
-      function updateProgressUI() {
-        const duration = Number.isFinite(video.duration) ? video.duration : 0;
-        const current = Number.isFinite(video.currentTime) ? video.currentTime : 0;
-        const percent = duration ? (current / duration) * 100 : 0;
-
-        progressFill.style.width = percent + "%";
-        timeLabel.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
-      }
-
-      video.addEventListener("loadedmetadata", updateProgressUI);
-      video.addEventListener("timeupdate", updateProgressUI);
-
-      video.addEventListener("ended", () => {
-        setPlayState(false);
-      });
-
-      video.addEventListener("play", () => setPlayState(true));
-      video.addEventListener("pause", () => setPlayState(false));
-
-      playPauseBtn.addEventListener("click", togglePlayback);
-      centerPlayBtn.addEventListener("click", togglePlayback);
-
-      muteBtn.addEventListener("click", () => {
-        video.muted = !video.muted;
-        setMuteState(video.muted);
-      });
-
-      muteTopBtn.addEventListener("click", () => {
-        video.muted = !video.muted;
-        setMuteState(video.muted);
-      });
-
-      progressBar.addEventListener("click", (e) => {
-        const rect = progressBar.getBoundingClientRect();
-        const ratio = (e.clientX - rect.left) / rect.width;
-        const seekTime = ratio * video.duration;
-        video.currentTime = seekTime;
-      });
-
-      fullscreenBtn.addEventListener("click", async () => {
-        try {
-          if (video.requestFullscreen) {
-            await video.requestFullscreen();
-          }
-        } catch (err) {}
-      });
-
-      setPlayState(false);
-      setMuteState(video.muted);
-      video.play().catch(() => {});
     </script>
   </body>
 </html>
