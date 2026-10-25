@@ -1100,7 +1100,7 @@
 
       .founder-video-layout {
         display: grid;
-        grid-template-columns: 1.22fr 0.78fr;
+        grid-template-columns: minmax(0, 1.2fr) minmax(260px, 420px);
         gap: 44px;
         align-items: center;
         padding: 18px 0;
@@ -1162,13 +1162,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
       }
 
       .video-shell {
         position: relative;
-        width: min(100%, 430px);
-        aspect-ratio: 9 / 16;
-        border-radius: 24px;
+        width: min(100%, 420px);
+        height: clamp(360px, 44vw, 600px);
+        aspect-ratio: 9 / 12.5;
+        border-radius: 26px;
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.12);
         background: #000;
@@ -1182,26 +1184,6 @@
         object-fit: cover;
         object-position: center;
         background: #000;
-      }
-
-      .video-brand {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        z-index: 3;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(0, 0, 0, 0.38);
-        color: #fff;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        backdrop-filter: blur(8px);
       }
 
       @media (max-width: 980px) {
@@ -1263,7 +1245,8 @@
         }
 
         .video-shell {
-          width: min(100%, 360px);
+          width: min(100%, 420px);
+          height: clamp(320px, 70vw, 520px);
         }
       }
 
@@ -1408,6 +1391,7 @@
 
         .video-shell {
           width: min(100%, 340px);
+          height: clamp(300px, 80vw, 420px);
         }
 
         .founder-copy p {
@@ -1521,8 +1505,6 @@
 
         <div class="video-card">
           <div class="video-shell">
-            <div class="video-brand" data-i18n="videoAd.brand">Rise Above Ego</div>
-
             <video
               id="founderVideo"
               controls
