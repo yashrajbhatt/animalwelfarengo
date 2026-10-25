@@ -1100,7 +1100,7 @@
 
       .founder-video-layout {
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(260px, 420px);
+        grid-template-columns: 1.22fr 0.78fr;
         gap: 44px;
         align-items: center;
         padding: 18px 0;
@@ -1162,15 +1162,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
       }
 
       .video-shell {
         position: relative;
-        width: min(100%, 420px);
-        height: clamp(360px, 44vw, 600px);
-        aspect-ratio: 9 / 12.5;
-        border-radius: 26px;
+        width: min(100%, 430px);
+        aspect-ratio: 9 / 16;
+        border-radius: 24px;
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.12);
         background: #000;
@@ -1265,8 +1263,7 @@
         }
 
         .video-shell {
-          width: min(100%, 420px);
-          height: clamp(320px, 70vw, 520px);
+          width: min(100%, 360px);
         }
       }
 
@@ -1411,7 +1408,6 @@
 
         .video-shell {
           width: min(100%, 340px);
-          height: clamp(300px, 80vw, 420px);
         }
 
         .founder-copy p {
